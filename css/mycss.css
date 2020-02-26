@@ -1,0 +1,25 @@
+.intro-text{
+    width: 50%;
+    opacity: 0;
+    transform: translateY(20px);
+    transform: 5s all ease-in-out;
+}
+
+.intro-appear{
+    opacity: 1;
+    transition: opacity 1s;
+    transform: translateY(0px);
+}
+
+.newShape{
+    clip-path: polygon(0 100%,100% 100%,100% 0%,0 0);
+}
+
+.svg-1{
+    filter:drop-shadow(4px 4px 4px rgba(206, 213, 236, 0.747));
+    
+}
+
+.svg-1:hover{
+    filter:drop-shadow(10px 10px 10px  rgb(0, 0, 0));
+}
