@@ -1,17 +1,10 @@
 body{
-    background-image: linear-gradient(to right, rgb(43, 97, 158) , rgb(0, 162, 255));
+    background-image: linear-gradient(to right, rgb(158, 39, 9) , rgb(255, 148, 49));
 }
 .navBar{
     display: block;
-    background-image: linear-gradient(to right, rgb(9, 78, 158) , rgb(0, 162, 255));
+    background-image: linear-gradient(to right, rgb(158, 39, 9) , rgb(255, 148, 49));
     text-align: center;
-}
-
-.intro-text{
-    width: 50%;
-    opacity: 0;
-    transform: translateY(20px);
-    transform: 5s all ease-in-out;
 }
 
 .navBarTitle{
@@ -20,7 +13,100 @@ body{
     color: white;
     font-size: 4rem;
     margin: 0;
+    text-shadow: 10px 10px 10px black;
     
+}
+
+/*SlideShow*/
+.slideShow{
+    width:50%;
+    position: relative;
+    height: auto;
+    margin-left:10px;
+    float: left;
+    clip-path: polygon(0 100,0 0,0 0,0 0);
+    box-shadow: 10px 10px 10px black;
+}
+
+.hideSlides{
+    display: none;
+}
+
+.slideShow-items{
+    height:auto;
+    width: 100%;
+
+}
+
+.slide{
+    height:300px;
+    width: 100%;
+}
+
+.slideShow-captions{
+    color: #f2f2f2;
+    font-size: 25px;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: left;
+
+}
+
+
+
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+  /* Position the "next button" to the right */
+.next {
+    right: 0em;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+
+  /* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+.intro-text{
+    width: 50%;
+    opacity: 0;
+    transform: translateY(20px);
+    transform: 5s all ease-in-out;
 }
 
 .intro-appear{
