@@ -47,3 +47,5 @@ function hideAll(){
         document.getElementById("slide"+i).setAttribute("style","display:none;");
     }
 }
+
+setInterval(function(){ previewSlides(index+1); }, 5000);

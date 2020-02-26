@@ -1,10 +1,11 @@
 body{
-    background-image: linear-gradient(to right, rgb(158, 39, 9) , rgb(255, 148, 49));
+    
 }
 .navBar{
     display: block;
-    background-image: linear-gradient(to right, rgb(158, 39, 9) , rgb(255, 148, 49));
+    background-image: linear-gradient(to right, rgb(9, 69, 158) , rgb(132, 168, 245));
     text-align: center;
+    box-shadow: 0px 10px 10px rgb(96, 163, 240);
 }
 
 .navBarTitle{
@@ -14,7 +15,20 @@ body{
     font-size: 4rem;
     margin: 0;
     text-shadow: 10px 10px 10px black;
+    animation: blink 3s infinite ease;
     
+}
+
+@keyframes blink{
+  0%{
+    color:white;
+  }
+  50%{
+    color:rgb(179, 218, 250);
+  }
+  100%{
+    color:white;
+  }
 }
 
 /*SlideShow*/
@@ -25,7 +39,7 @@ body{
     margin-left:10px;
     float: left;
     clip-path: polygon(0 100,0 0,0 0,0 0);
-    box-shadow: 10px 10px 10px black;
+    box-shadow: 10px 10px 10px rgb(96, 163, 240);
 }
 
 .hideSlides{
