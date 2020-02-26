@@ -1,8 +1,22 @@
+.navBar{
+    background-color: rgb(8, 98, 150);
+    margin:0;
+}
+
 .intro-text{
     width: 50%;
     opacity: 0;
     transform: translateY(20px);
     transform: 5s all ease-in-out;
+}
+
+.navBarTitle{
+    font-family:'Knewave';
+    font-weight: 400;
+    color: white;
+    font-size: 4rem;
+    margin:0;
+    
 }
 
 .intro-appear{
