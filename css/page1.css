@@ -1,0 +1,138 @@
+
+.banner{
+
+    position:absolute;
+    top:25vw;
+    left:50%;
+    height: auto;
+    width: 80%;
+    padding: 2rem;
+    transform: translate(-50%,-50%);
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 3rem;
+    box-shadow: black;    
+}
+
+.bannerHeading{
+    font-family: roboto;
+    font-weight: 400;
+    padding-left: 0rem;
+    color: rgb(255, 255, 255);
+    font-size: 10vw;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    text-shadow: 5px 5px 5px black;
+    //animation: blink 3s infinite ease; 
+}
+
+.bannerText{
+  color: white;
+  width: 100%;
+  font-size: 4vw; 
+  text-align: center;
+}
+
+@keyframes blink{
+  0%{
+    color:white;
+  }
+  50%{
+    color:rgb(179, 218, 250);
+  }
+  100%{
+    color:white;
+  }
+}
+body{
+    padding: 0rem;
+    margin: 0rem;
+    background-image: linear-gradient(to right, rgb(209, 203, 221) , rgb(194, 217, 224));
+  }
+  /*SlideShow*/
+  .slideShow{
+  
+      position: relative;
+      max-height:640px;
+      width: 100%;
+      margin:0px;
+      padding: 0rem;
+      border: 0rem;
+      float: left;
+      clip-path: polygon(0 100,0 0,0 0,0 0);
+  }
+  
+  .hideSlides{
+      display: none;
+  }
+  
+  .slideShow-items{
+      
+  
+  }
+  
+  .slide{
+      max-height: 640px;
+      width: 100%;
+  }
+  
+  .slideShow-captions{
+      color: #f2f2f2;
+      font-size: 25px;
+      font-family: sans-serif;
+      font-weight: bold;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 15px;
+      width: 100%;
+      text-align: left;
+  }
+  
+  
+  
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+  
+    /* Position the "next button" to the right */
+  .next {
+      right: 0em;
+      border-radius: 3px 0 0 3px;
+    }
+    
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+  
+    /* Fading animation */
+  .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 0.5s;
+      animation-name: fade;
+      animation-duration: 0.5s;
+    }
+    
+    @-webkit-keyframes fade {
+      from {opacity: .6}
+      to {opacity: 1}
+    }
+    
+    @keyframes fade {
+      from {opacity: .6}
+      to {opacity: 1}
+    }
+  

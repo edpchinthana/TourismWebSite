@@ -1,0 +1,45 @@
+body{
+    //background-image: linear-gradient(to right,rgb(158, 177, 231), rgb(167, 193, 250));
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.map-container{
+    width:50%;
+    display: block;
+    padding-top: 30px;
+    padding-left: 150px;
+    padding-bottom:0px;
+}
+
+.map{
+    
+}
+path{
+    fill:rgb(66, 112, 236);
+    box-shadow: 10px 10px 10px black;
+    stroke:none;
+    transition-duration:1s;
+    transition-property: fill;
+}
+
+path:hover{
+    fill:green;
+    stroke:green;
+    stroke-width: 2rem;
+    box-shadow: blue;
+}
+
+.showDetails-container{
+    
+    clip-path: polygon(100% 0, 100% 100%, 20% 100%, 0 0);
+    background-color: blue;
+    width: 60%;
+    height:46vw;
+    right: 0em;
+
+}
