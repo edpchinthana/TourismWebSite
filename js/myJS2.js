@@ -4,10 +4,22 @@ function selectProvince(n){
         var path = document.getElementById("pathId"+x);
         path.setAttribute('style','fill:rgb(66, 112, 236)');
     }
-
     var path = document.getElementById("pathId"+n);
     path.setAttribute('style','fill:green');
+    displayDetails(n);
 
+}
+let prevContainer=0;
+//Display province details
+function displayDetails(n){
+    if(prevContainer===0){
+        
+    }else{
+        document.getElementById("container"+prevContainer).setAttribute('style','display:none');
+    }
+    console.log(n+" "+prevContainer);
+    document.getElementById("container"+n).setAttribute('style','display:block');
+    prevContainer=n;
 }
 
 

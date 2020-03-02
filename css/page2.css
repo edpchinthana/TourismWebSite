@@ -61,8 +61,11 @@ path:hover{
     color:green;
     text-align: right;
     display:none;
+    animation: display;
+    duration: 2s;
 }
 .container-heading{
     font-size: 3rem;
     color: rgb(19, 75, 121);;
 }
+
