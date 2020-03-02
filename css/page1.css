@@ -55,7 +55,7 @@ body{
   .slideShow{
   
       position: relative;
-      max-height:640px;
+      max-height:600px;
       width: 100%;
       margin:0px;
       padding: 0rem;
@@ -135,4 +135,3 @@ body{
       from {opacity: .6}
       to {opacity: 1}
     }
-  

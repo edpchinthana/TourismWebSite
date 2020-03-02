@@ -36,10 +36,33 @@ path:hover{
 
 .showDetails-container{
     
-    clip-path: polygon(100% 0, 100% 100%, 20% 100%, 0 0);
-    background-color: blue;
+    clip-path: polygon(100% 0, 100% 100%, 15% 100%, 0 0);
+    background-image: linear-gradient(to right,rgba(255, 255, 255, 0),rgba(19, 28, 110, 0.226));
     width: 60%;
     height:46vw;
     right: 0em;
-
+}
+.heading{
+    color:rgb(17, 115, 228);
+    font-family: "Roboto";
+    text-align: right;
+    font-size: 4rem;
+    padding-right: 80px;
+    padding-top:20px;
+    font-weight: bold;
+}
+.content{
+    width: 80%;
+    float: right;
+}
+.container{
+    font-family: roboto;
+    padding-right: 80px;
+    color:green;
+    text-align: right;
+    display:none;
+}
+.container-heading{
+    font-size: 3rem;
+    color: rgb(19, 75, 121);;
 }

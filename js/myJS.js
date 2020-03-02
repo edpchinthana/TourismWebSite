@@ -49,3 +49,24 @@ function hideAll(){
 }
 
 setInterval(function(){ previewSlides(index+1); }, 5000);
+
+//printing the heading
+const text = "SRI LANKA";
+let count = 0;
+let count1=0;
+let index1=0;
+(function type(){
+        currentText = text;
+        console.log("Hello");
+        if(index1==2){
+            letter=letter+" L";
+            index1 = index1+2;
+        }else{
+            letter = currentText.slice(0,++index1);
+        }
+        document.querySelector('.bannerHeading').textContent=letter;
+        count1++;
+        if(count1<10){
+            setTimeout(type,150);
+        }
+}());
