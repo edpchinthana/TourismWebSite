@@ -20,7 +20,7 @@ body{
     
 }
 path{
-    fill:rgb(66, 112, 236);
+    fill:#4D419B;
     box-shadow: 10px 10px 10px black;
     stroke:none;
     transition-duration:1s;
@@ -28,22 +28,22 @@ path{
 }
 
 path:hover{
-    fill:green;
-    stroke:green;
+    fill:#FDB833;
+    stroke:#FDB833;
     stroke-width: 2rem;
-    box-shadow: blue;
 }
 
 .showDetails-container{
     
     clip-path: polygon(100% 0, 100% 100%, 15% 100%, 0 0);
-    background-image: linear-gradient(to right,rgba(255, 255, 255, 0),rgba(19, 28, 110, 0.226));
+    background-image: linear-gradient(to right,rgba(255, 255, 255, 0),rgb(207, 217, 240));
     width: 60%;
     height:46vw;
     right: 0em;
+    box-shadow: 5px 5px 5px black;
 }
 .heading{
-    color:rgb(17, 115, 228);
+    color:#B1740F;
     font-family: "Roboto";
     text-align: right;
     font-size: 4rem;
@@ -54,18 +54,41 @@ path:hover{
 .content{
     width: 80%;
     float: right;
+    border: 2px solid black;
+    box-shadow: 2px 2px 10px rgb(17, 64, 219);
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 20px;
+    background-color: rgba(238, 238, 238, 0.473);
 }
 .container{
     font-family: roboto;
-    padding-right: 80px;
-    color:green;
+    padding-right: 40px;
+    color: #4D419B;
     text-align: right;
     display:none;
-    animation: display;
-    duration: 2s;
+    height: 300px;
 }
 .container-heading{
     font-size: 3rem;
-    color: rgb(19, 75, 121);;
+    color: #4D419B;
+}
+
+li{
+    float:right;
+    margin:3px;
+    width:60%;
+    list-style: none;
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 2px 2px 5px rgb(92, 138, 240);
+    border-radius: 10px;
+    border-style: groove;
+    background-color: rgba(253, 253, 253, 0.808);
+    padding: 5px;
+    
+}
+
+li:hover{
+    background-color: white;
 }
 

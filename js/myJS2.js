@@ -2,10 +2,10 @@
 function selectProvince(n){
     for(let x=1;x<11;x++){
         var path = document.getElementById("pathId"+x);
-        path.setAttribute('style','fill:rgb(66, 112, 236)');
+        path.setAttribute('style','fill:#4D419B');
     }
     var path = document.getElementById("pathId"+n);
-    path.setAttribute('style','fill:green');
+    path.setAttribute('style','fill:#FDB833');
     displayDetails(n);
 
 }
@@ -17,17 +17,18 @@ function displayDetails(n){
     }else{
         document.getElementById("container"+prevContainer).setAttribute('style','display:none');
     }
-    console.log(n+" "+prevContainer);
     document.getElementById("container"+n).setAttribute('style','display:block');
     prevContainer=n;
 }
 
 
+
+
 //printing the heading
 const text = "EXPLORE";
-let count = 0;
-let index1=0;
-let count1=0;
+count = 0;
+index1=0;
+count1=0;
 (function type(){
         currentText = text;
         letter = currentText.slice(0,++index1);

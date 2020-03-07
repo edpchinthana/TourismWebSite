@@ -1,59 +1,31 @@
 
-.banner{
-
-    position:absolute;
-    top:25vw;
-    left:50%;
-    height: auto;
-    width: 80%;
-    padding: 2rem;
-    transform: translate(-50%,-50%);
-    z-index: 10;
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 3rem;
-    box-shadow: black;    
+  body{
+    margin:0px;
+    padding:0px;
+  }
+.navBar{
+  z-index: 10;
+  position:fixed;
+  display: flex;
 }
 
-.bannerHeading{
-    font-family: roboto;
-    font-weight: 400;
-    padding-left: 0rem;
-    color: rgb(255, 255, 255);
-    font-size: 10vw;
-    font-weight: bold;
-    text-align: center;
-    margin: 0;
-    width: 100%;
-    text-shadow: 5px 5px 5px black;
-    //animation: blink 3s infinite ease; 
+.navBar-heading{
+  display: flex;
+  padding-left: 20px;
+  color:white;
+  font-family: poppins;
+  font-size:3rem;
+}
+.navBar ul{
+  list-style: none;
+  display: flex;
+}
+.navBar li{
+  color:white;
 }
 
-.bannerText{
-  color: white;
-  width: 100%;
-  font-size: 4vw; 
-  text-align: center;
-}
-
-@keyframes blink{
-  0%{
-    color:white;
-  }
-  50%{
-    color:rgb(179, 218, 250);
-  }
-  100%{
-    color:white;
-  }
-}
-body{
-    padding: 0rem;
-    margin: 0rem;
-    background-image: linear-gradient(to right, rgb(209, 203, 221) , rgb(194, 217, 224));
-  }
   /*SlideShow*/
-  .slideShow{
-  
+  .slideShow{ 
       position: relative;
       max-height:600px;
       width: 100%;
@@ -61,36 +33,17 @@ body{
       padding: 0rem;
       border: 0rem;
       float: left;
+
       clip-path: polygon(0 100,0 0,0 0,0 0);
   }
   
   .hideSlides{
       display: none;
   }
-  
-  .slideShow-items{
-      
-  
-  }
-  
   .slide{
       max-height: 640px;
       width: 100%;
   }
-  
-  .slideShow-captions{
-      color: #f2f2f2;
-      font-size: 25px;
-      font-family: sans-serif;
-      font-weight: bold;
-      padding: 8px 12px;
-      position: absolute;
-      bottom: 15px;
-      width: 100%;
-      text-align: left;
-  }
-  
-  
   
     .prev, .next {
       cursor: pointer;
@@ -134,4 +87,8 @@ body{
     @keyframes fade {
       from {opacity: .6}
       to {opacity: 1}
+    }
+    .clipart{
+      width: 100%;
+      max-height: 150px;
     }
