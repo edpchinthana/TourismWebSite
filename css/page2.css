@@ -36,13 +36,13 @@ path:hover{
     color:rgb(0, 0, 0);
     font-family: poppins;
     text-align: right;
-    font-size: 4rem;
+    font-size: 3rem;
     padding-right: 80px;
     padding-top:20px;
     font-weight: bold;
 }
 .content{
-    width: 80%;
+    width: 90%;
     float: right;
     border: 2px solid black;
     box-shadow: 2px 2px 10px rgb(17, 64, 219);
@@ -50,6 +50,7 @@ path:hover{
     padding: 10px;
     margin-right: 20px;
     background-color: rgba(238, 238, 238, 0.473);
+    line-height: 50px;
 }
 .container{
     font-family: poppins;
@@ -58,28 +59,19 @@ path:hover{
     text-align: right;
     display:none;
     height: 300px;
+    opacity:1;
+    transition: opacity;
 }
 .container-heading{
-    font-size: 3rem;
+    font-size: 2rem;
     color: rgb(0, 0, 0);
 }
-/*
-li{
-    float:right;
-    margin:3px;
-    width:60%;
-    list-style: none;
-    border: 1px solid rgb(255, 255, 255);
-    box-shadow: 2px 2px 5px rgb(92, 138, 240);
-    border-radius: 10px;
-    border-style: groove;
-    background-color: rgba(253, 253, 253, 0.808);
-    padding: 5px;
-    
-}
 
-li:hover{
-    background-color: white;
+@keyframes showProvince{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
-
-*/
