@@ -1,12 +1,3 @@
-body{
-    //background-image: linear-gradient(to right,rgb(158, 177, 231), rgb(167, 193, 250));
-}
-
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
 
 .map-container{
     width:50%;
@@ -20,7 +11,7 @@ body{
     
 }
 path{
-    fill:#4D419B;
+    fill:rgb(78, 151, 235);
     box-shadow: 10px 10px 10px black;
     stroke:none;
     transition-duration:1s;
@@ -28,23 +19,22 @@ path{
 }
 
 path:hover{
-    fill:#FDB833;
-    stroke:#FDB833;
+    fill:rgb(20, 16, 250);
+    stroke:rgb(20, 16, 250);
     stroke-width: 2rem;
 }
 
 .showDetails-container{
     
-    clip-path: polygon(100% 0, 100% 100%, 15% 100%, 0 0);
-    background-image: linear-gradient(to right,rgba(255, 255, 255, 0),rgb(207, 217, 240));
-    width: 60%;
+    clip-path: polygon(100% 0, 100% 100%, 0% 100%, 0 0);
+    background-image: linear-gradient(to bottom,rgba(202, 211, 255, 0.932),rgb(255, 255, 255));
+    width: 100%;
     height:46vw;
     right: 0em;
-    box-shadow: 5px 5px 5px black;
 }
 .heading{
-    color:#B1740F;
-    font-family: "Roboto";
+    color:rgb(0, 0, 0);
+    font-family: poppins;
     text-align: right;
     font-size: 4rem;
     padding-right: 80px;
@@ -62,18 +52,18 @@ path:hover{
     background-color: rgba(238, 238, 238, 0.473);
 }
 .container{
-    font-family: roboto;
+    font-family: poppins;
     padding-right: 40px;
-    color: #4D419B;
+    color: rgb(0, 0, 0);
     text-align: right;
     display:none;
     height: 300px;
 }
 .container-heading{
     font-size: 3rem;
-    color: #4D419B;
+    color: rgb(0, 0, 0);
 }
-
+/*
 li{
     float:right;
     margin:3px;
@@ -92,3 +82,4 @@ li:hover{
     background-color: white;
 }
 
+*/
