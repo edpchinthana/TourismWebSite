@@ -12,11 +12,8 @@ function selectProvince(n){
 let prevContainer=0;
 //Display province details
 function displayDetails(n){
-    if(prevContainer===0){
-        
-    }else{
         document.getElementById("container"+prevContainer).setAttribute('style','display:none');
-    }
+    
     document.getElementById("container"+n).setAttribute('style','display:block');
     prevContainer=n;
 }

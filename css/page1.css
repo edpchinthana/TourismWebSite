@@ -176,11 +176,6 @@ html {
       color: white;
       text-align: center;
     }
-
-
-
-
-
   /*Explore Page*/
     .explore{
       display:flex;
@@ -276,6 +271,7 @@ path:hover{
   height:25.730994152046783vw;
   width:14.035087719298245vw;
   margin: 1.461988304093567VW;
+  z-index:2;
   
 }
 .image-medium{
@@ -291,6 +287,25 @@ path:hover{
   margin-left:4.385964912280701VW;
 }
 
+.about-container-small{
+  display: inline;
+  width:10%;
+}
+.about-container-medium{
+  display:inline;
+  width:20%;
+}
+.about-container-big{
+  display:inline;
+  width:40%;
+}
+.about-text{
+  position:absolute;
+  color:black;
+  vertical-align: center;
+  background-color: green;
+
+}
 .about-image:hover{
-  box-shadow: 2px 3px 10px rgb(12, 49, 150);
+  box-shadow: 5px 5px 10px rgb(5, 5, 5);
 }
