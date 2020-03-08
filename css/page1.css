@@ -256,7 +256,7 @@ path:hover{
 }
 
 .about{
-  padding:10px;
+  padding:0.7309941520467835VW;
   padding-left: 5.847953216374268VW;
 }
 .about-heading{
@@ -266,12 +266,12 @@ path:hover{
 }
 
 .about-image{
+  transition: all 0.5 ease-in;
 }
 .image-small{
   height:25.730994152046783vw;
   width:14.035087719298245vw;
   margin: 1.461988304093567VW;
-  z-index:2;
   
 }
 .image-medium{
@@ -289,23 +289,36 @@ path:hover{
 
 .about-container-small{
   display: inline;
-  width:10%;
 }
 .about-container-medium{
   display:inline;
-  width:20%;
 }
 .about-container-big{
   display:inline;
-  width:40%;
 }
 .about-text{
+  
   position:absolute;
-  color:black;
-  vertical-align: center;
-  background-color: green;
-
+  font-size:2.5vw;
+  font-family: poppins;
+  color:rgb(255, 255, 255);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.562);
+  transition: all 0.5s ease-in;
 }
 .about-image:hover{
+  box-shadow: 5px 5px 10px rgb(5, 5, 5);
+}
+.about-image:hover + .about-text{
+  box-shadow: 5px 5px 10px rgb(5, 5, 5);
+  background-color: white;
+  color:black;
+}
+.about-text:hover{
+  box-shadow: 5px 5px 10px rgb(5, 5, 5);
+  background-color: white;
+  color:black;
+}
+.about-text:hover+ .about-image{
   box-shadow: 5px 5px 10px rgb(5, 5, 5);
 }
