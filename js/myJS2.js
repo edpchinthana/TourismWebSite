@@ -2,22 +2,31 @@
 function selectProvince(n){
     for(let x=1;x<11;x++){
         var path = document.getElementById("pathId"+x);
-        path.setAttribute('style','fill:rgb(78, 151, 235)');
+        path.setAttribute('style','fill:rgb(87, 88, 88)');
     }
     var path = document.getElementById("pathId"+n);
-    path.setAttribute('style','fill:rgb(20, 16, 250)');
+    path.setAttribute('style','fill:black');
     displayDetails(n);
 
 }
 let prevContainer=0;
 //Display province details
 function displayDetails(n){
+        
+        document.getElementById("container"+prevContainer).style.transform="translateX(100px)";
         document.getElementById("container"+prevContainer).setAttribute('style','display:none');
-    
-    document.getElementById("container"+n).setAttribute('style','display:block');
+
+    document.getElementById("container"+n).style.display="block";
+    document.getElementById("container"+n).style.animation="showDetails 1s ease-in-out";
+
     prevContainer=n;
 }
 
+function hideContent(){
+
+    document.getElementsByClassName("showDetails-container").style.display="none";
+    document.getElementsByClassName("content").style.display="none";
+}
 
 
 
