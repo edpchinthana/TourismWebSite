@@ -49,7 +49,7 @@ html {
   color:rgb(251, 255, 0);
   font-weight: bold;
 }
-@media screen and (max-width:768px){
+@media screen and (max-width:1000px){
   body{
     overflow-x: hidden;
   }
@@ -195,7 +195,7 @@ html {
 .map{
   
 }
-path{
+.map path{
   fill:rgb(87, 88, 88);
   box-shadow: 10px 10px 10px black;
   stroke:none;
@@ -203,7 +203,7 @@ path{
   transition-property: fill;
 }
 
-path:hover{
+.map path:hover{
   fill:rgb(0, 0, 0);
   stroke:black;
   stroke-width: 1rem;
@@ -212,11 +212,13 @@ path:hover{
   position: absolute;
   width: 100%;
   height:36vw;
-  top:115vw;
+  opacity:0;
+  top:115.1vw;
   margin:0px;
-  transform: translateX(0px);
-  transition:all 1s ease-in-out;
-  background-color: rgba(0, 0, 0, 0.37);
+  transform: translateX(500px);
+  transition:all 0.5s ease-in-out;
+  background-color: rgb(255, 255, 255);
+  
 }
 .container{
   font-family: poppins;
@@ -224,9 +226,8 @@ path:hover{
   color: rgb(0, 0, 0);
   text-align: right;
   display:none;
-  height: 300px;
   opacity:1;
-  transition: all 1s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 @keyframes showDetails{
   from{
@@ -240,14 +241,29 @@ path:hover{
   font-family: poppins;
   text-align: right;
   font-size: 2rem;
-  padding-right: 20px;
-  padding-top:20px;
+  padding-top: 20px;
+  padding-right: 60px;
   font-weight: bold;
   float: right;
+  width:100%;
 }
 
+.explore-backButton{
+  font-family: poppins;
+  font-size:15px;
+  margin: 20px;
+  box-shadow:2px 2px 2px black;
+  border-radius: 2px;
+  background-color: rgb(160, 158, 158);
+}
+.explore-backButton:hover{
+  display: inline;
+  box-shadow: none;
+  background-color: rgb(139, 138, 136);
+}
 
 .container-heading{
+  display: inline;
   font-size: 2rem;
   color: rgb(0, 0, 0);
 }
@@ -259,7 +275,16 @@ path:hover{
       opacity: 1;
   }
 }
-
+.container-province-map{
+  display:inline;
+  width: 40%;
+  float:left;
+}
+.container-province-list{
+  display:inline;
+  float:right;
+  width:60%;
+}
 .about{
   padding:0.7309941520467835VW;
   padding-left: 5.847953216374268VW;

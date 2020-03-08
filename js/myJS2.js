@@ -1,9 +1,6 @@
 //selecting province
 function selectProvince(n){
-    for(let x=1;x<11;x++){
-        var path = document.getElementById("pathId"+x);
-        path.setAttribute('style','fill:rgb(87, 88, 88)');
-    }
+    
     var path = document.getElementById("pathId"+n);
     path.setAttribute('style','fill:black');
     displayDetails(n);
@@ -12,20 +9,27 @@ function selectProvince(n){
 let prevContainer=0;
 //Display province details
 function displayDetails(n){
+    if(prevContainer===0){
 
-    document.getElementById("container"+prevContainer).style.transform="translateX(0px)";
+    }else{
+        //document.getElementById("containerDiv").style.display="block";
+        document.getElementById("container"+prevContainer).style.display="none";
+    }
     document.getElementById("containerDiv").style.transform="translateX(0px)";
-    document.getElementById("containerDiv").style.opacity="1";
-    document.getElementById("container"+n).style.display="block";
-    document.getElementById("container"+n).style.transform="translateX(0px)"
-    document.getElementById("container"+n).style.animation="showDetails 1s ease-in-out";
-
+        document.getElementById("containerDiv").style.opacity="1";
+        document.getElementById("container"+n).style.display="block";
+        document.getElementById("container"+n).style.transform="translateX(0px)"
+        document.getElementById("container"+n).style.animation="showDetails 1s ease-in-out";
     prevContainer=n;
 }
 
 function hideContent(){
     document.getElementById("containerDiv").style.transform="translateX(500px)";
     document.getElementById("containerDiv").style.opacity="0";
+    for(let x=1;x<11;x++){
+        var path = document.getElementById("pathId"+x);
+        path.setAttribute('style','fill:rgb(87, 88, 88)');
+    }
 }
 
 
