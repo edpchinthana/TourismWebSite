@@ -213,7 +213,6 @@ path:hover{
 .showDetails-container{
   
   clip-path: polygon(100% 0, 100% 100%, 0% 100%, 0 0);
-  background-image: linear-gradient(to bottom,rgba(202, 211, 255, 0.932),rgb(255, 255, 255));
   width: 100%;
   height:46vw;
   right: 0em;
@@ -272,7 +271,6 @@ path:hover{
 }
 
 .about-image{
-  z-index=0;
 }
 .image-small{
   height:25.730994152046783vw;

@@ -26,7 +26,7 @@ function displayDetails(n){
 
 //printing the heading
 function typeExplore(){
-    const text = "EXPLORE";
+    const text = "Explore";
     count = 0;
     index1=0;
     count1=0;
