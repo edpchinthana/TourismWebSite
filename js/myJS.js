@@ -54,17 +54,20 @@ const navSlide=()=>{
         burger.classList.toggle('toggle');
     }); 
 }
+var lastScroll=0;
     navSlide();
     window.addEventListener("scroll", function (event) {
         var scroll = this.scrollY;
+        
         console.log(scroll);
-        if(scroll>0){
-            var navBar= document.getElementById('navBar');
-            navBar.style.background='black';
-        }else if(scroll===0){
+        if(scroll===0){
             var navBar= document.getElementById('navBar');
             navBar.style.background='rgba(0, 0, 0, 0.144)';
+        }else{
+            var navBar= document.getElementById('navBar');
+            navBar.style.background='black';
         }
+        lastScroll=scroll;
     });
 
 function scrollWindow(k){
