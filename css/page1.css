@@ -217,7 +217,7 @@ html {
   margin:0px;
   transform: translateX(500px);
   transition:all 0.5s ease-in-out;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.938);
   
 }
 .container{
@@ -259,7 +259,7 @@ html {
   transition: all 0.3s ease-in
 }
 .explore-backButton:hover{
-  display: inline;
+
   box-shadow: none;
   background-color: rgb(0, 0, 0);
   color:white;
@@ -270,6 +270,27 @@ html {
   display: inline;
   font-size: 2rem;
   color: rgb(0, 0, 0);
+}
+
+.container-province-list{
+  width:60%;
+}
+.container-province-list ul{
+  list-style: none;
+}
+
+.container-province-list li{
+  width:50%;
+  float: right;
+  border: 1px solid black;
+  margin-bottom: 2px;
+  padding-right: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.container-province-list li:hover{
+  font-size:20px;
+  background-color: black;
+  color:white;
 }
 @keyframes showProvince{
   from{
