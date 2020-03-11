@@ -71,5 +71,8 @@ var lastScroll=0;
     });
 
 function scrollWindow(k){
-    window.scrollTo(0,k);
+    //window.scrollTo(0,k);
+    var element = document.getElementById(k);
+    var location = element.offsetTop-50;
+    window.scrollTo(0,location)
 }
