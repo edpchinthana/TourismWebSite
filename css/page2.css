@@ -81,7 +81,7 @@ body{
 
   /* Position the "next button" to the right */
 .next {
-    right: 0em;
+    right: 0px;
     border-radius: 3px 0 0 3px;
   }
   
@@ -111,15 +111,20 @@ body{
   .content{
       padding:30px;
       position: absolute;
-      background-color: rgba(0, 0, 0, 0.795);
-      color:white;
+      background-color: rgba(0, 0, 0, 0.137);
+      color:rgba(255, 255, 255, 0.205);
       font-size: 20px;
       text-align: justify;
       width:70%;
       transform: translate(20%,20%);
+      transition: all 0.6s ease;
   }
   .content h1{
       text-align: center;
       padding: 0px;
       margin: 0px;
   }
+.content:hover{
+    background-color: rgba(0, 0, 0, 0.808);
+    color:white;
+}
