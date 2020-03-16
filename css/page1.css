@@ -101,7 +101,10 @@ html {
   transform:rotate(45deg) translate(-5px,-7px);
 }
 
-
+.content-body{
+  display:block;
+  position: relative;
+}
   /*SlideShow*/
   .slideShow{ 
       display: block;
@@ -311,6 +314,7 @@ html {
   width:60%;
 }
 .about{
+  display: block;
   padding:0.9309941520467835VW;
   padding-left: 5.847953216374268VW;
 }
