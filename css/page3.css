@@ -9,6 +9,9 @@ body{
 .navBar{
     background-color: black;
     padding-left: 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
 }
 .navBar-heading{
     color:white;
@@ -17,14 +20,17 @@ body{
 }
 .content{
     display: inline;
-    position: relative;
+
 }
 
 .heading{
+    position: fixed;
     color:black;
     font-size: 2rem;
     padding:10px;
     font-weight:bold;
+    background-color: white;
+    width: 100%;
 }
 .container{
     display:table;
@@ -36,13 +42,18 @@ body{
     text-align: justify;
     width: 50%;
 }
+.images{
+    padding: 10px;
+    display: block;
+    max-height: 150px;
+    width: auto;
+}
 .map{
     width: 50%;
     overflow: hidden;
-    padding:200px;
+    padding:250px;
     position: relative;
     height: 0;
-
 }
 .map iframe{
     position: absolute;
@@ -67,5 +78,8 @@ body{
     .column {
       width: 100%;
       align-items: center;
+    }
+    .heading{
+        text-align: center;
     }
   }
