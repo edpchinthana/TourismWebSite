@@ -139,3 +139,25 @@ body{
     margin: auto;
     margin-top: 140px;
 }
+.clipart{
+    max-width: 350px;
+    max-height: 150px;
+    margin:0px;
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 0px;
+  }
+
+footer{
+    margin:0px;
+    padding-bottom:0px;
+    color: white;
+    text-align: center;
+  }
+.footerText{
+    margin:0px;
+    padding:5px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    background-color: rgb(94, 86, 86);
+}
