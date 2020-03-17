@@ -391,22 +391,18 @@ html {
 .about-text:hover+ .about-image{
   box-shadow: 5px 5px 10px rgb(5, 5, 5);
 }
-/* width */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1; 
 }
  
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: rgb(0, 0, 0); 
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(153, 153, 153); 
 }
