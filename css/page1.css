@@ -406,3 +406,9 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(153, 153, 153); 
 }
+@media screen and (max-width: 600px) {
+  .heading{
+    background-color: green;
+  }
+
+}
