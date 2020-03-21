@@ -247,14 +247,15 @@ path:nth-child(10){
   transform: translateX(100%);
   transition:all 0.5s ease-in-out;
   background-color: rgb(206, 214, 248);
-  display: none;  
+ 
 }
 .container{
+  display: none;
   font-family: poppins;
   padding-right: 40px;
   color: rgb(0, 0, 0);
   text-align: right;
-  display:none;
+  
   opacity:1;
   transition: all 0.5s ease-in-out;
 }
@@ -272,7 +273,7 @@ path:nth-child(10){
   padding-top: 30px;
   padding-left: 60px;
   font-weight: bold;
-  width:90%;
+  width:100%;
   background-color: rgb(206, 214, 248);
 }
 .backButton{
@@ -316,18 +317,16 @@ path:nth-child(10){
   }
 }
 .container-province-map{
-  display:none;
+
   width: 40%;
   float:left;
 }
 .container-province-list{
-  display:none;
+
   float:right;
   width:60%;
 }
-.container-province-map svg{
-  display: none;
-}
+
 .about{
   display: block;
   padding:0.9309941520467835VW;
@@ -437,7 +436,7 @@ path:nth-child(10){
     width:100%;
 }
 .column {
-  width: 100%;
+  width: 20%;
   align-items: center;
 }
 }
