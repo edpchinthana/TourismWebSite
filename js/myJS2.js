@@ -1,3 +1,5 @@
+
+
 //selecting province
 function selectProvince(n){
     
@@ -24,7 +26,7 @@ function displayDetails(n){
 }
 
 function hideContent(){
-    document.getElementById("containerDiv").style.transform="translateX(500px)";
+    document.getElementById("containerDiv").style.transform="translateX(2000px)";
     document.getElementById("containerDiv").style.opacity="0";
     for(let x=1;x<11;x++){
         var path = document.getElementById("pathId"+x);
