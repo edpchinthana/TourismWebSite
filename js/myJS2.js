@@ -2,11 +2,8 @@
 
 //selecting province
 function selectProvince(n){
-    
     var path = document.getElementById("pathId"+n);
-    path.setAttribute('style','fill:black');
     displayDetails(n);
-
 }
 let prevContainer=0;
 //Display province details
@@ -26,12 +23,8 @@ function displayDetails(n){
 }
 
 function hideContent(){
-    document.getElementById("containerDiv").style.transform="translateX(2000px)";
+    document.getElementById("containerDiv").style.transform="translateX(100%)";
     document.getElementById("containerDiv").style.opacity="0";
-    for(let x=1;x<11;x++){
-        var path = document.getElementById("pathId"+x);
-        path.setAttribute('style','fill:rgb(87, 88, 88)');
-    }
 }
 
 
