@@ -49,6 +49,7 @@ html {
 .navBar li:hover{
   color:rgb(251, 255, 0);
   font-weight: bold;
+  cursor: pointer;
 }
 @media screen and (max-width:1000px){
   body{
@@ -189,16 +190,19 @@ html {
       background-color: rgb(206, 214, 248);
     }
 .map-container{
-  padding-top: 30px;
-  padding-left: 150px;
-  padding-bottom:0px;
+  float: right;
+  display:flex;
+}
+.map-container svg{
+  transform: translate(100%,0%);
 }
 
 .map path{
   box-shadow: 10px 10px 10px black;
   stroke:none;
-  transition-duration:1s;
+  transition-duration:0.8s;
   transition-property: fill;
+  cursor: pointer;
 }
 path:nth-child(1){
   fill:green;
@@ -425,7 +429,7 @@ path:nth-child(10){
 
 .column{
   float: left;
-  width:44%;
+  width:50%;
 }
 @media screen and (max-width: 1000px) {
   .row{
