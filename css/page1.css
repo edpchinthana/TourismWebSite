@@ -6,6 +6,7 @@ html {
     margin:0px;
     padding:0px;
     overflow-x: hidden;
+    background-color: white;
   }
 .navBar{
   z-index: 2;
@@ -187,14 +188,14 @@ html {
   /*Explore Page*/
     .explore{
       position: relative;
-      background-color: rgb(206, 214, 248);
+      background: linear-gradient(180deg, rgb(200, 217, 253) 0%, rgb(212, 220, 247) 35%, rgb(212, 227, 243) 70%,rgb(234, 240, 252) 90%,rgb(255, 255, 255) 100%);
     }
 .map-container{
   float: right;
   display:flex;
 }
 .map-container svg{
-  transform: translate(100%,0%);
+  transform: translate(20vw,0%);
 }
 
 .map path{
@@ -279,6 +280,24 @@ path:nth-child(10){
   width:100%;
   background-color: rgb(206, 214, 248);
 }
+.province-intro{
+  text-align: justify;
+  padding: 2vw;
+  margin: 2vw;
+  font-family: poppins;
+  border: 2px solid black;
+  transform: translate(20%,50%);
+}
+@media screen and (max-width: 1000px) {
+  .province-intro{
+    transform: translate(5%,0%);
+  }
+  .map-container svg{
+    transform: translate(20vw,0%);
+  }
+}
+
+
 .backButton{
   
 }
@@ -295,6 +314,7 @@ path:nth-child(10){
 
 .container-province-list ul{
   list-style: none;
+
 }
 
 .container-province-list li{
@@ -429,14 +449,14 @@ path:nth-child(10){
 
 .column{
   float: left;
-  width:50%;
+  width:40%;
 }
 @media screen and (max-width: 1000px) {
   .row{
     width:100%;
 }
 .column {
-  width: 100%;
+  width: 80%;
   align-items: center;
 }
 }
