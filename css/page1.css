@@ -189,14 +189,15 @@ html {
       top:13vw;
       background-color: rgba(30, 60, 80, 0);
       transform: translateX(25%);
-      width: 60%;
-      text-align: center;
+      width: 40%;
+      text-align: left;
       font-size: 25px;
       padding: 50px;
       padding-bottom: 35px;
       font-family: poppins;
       line-height: 35px;
       border-radius: 20px;
+      z-index: 3;
     }
     .introduction-heading{
       font-size:40px;
@@ -215,6 +216,7 @@ html {
         transform: translateX(10%);
         width: 80%;
         padding: 2vw;
+        text-align: center;
       }
       .introduction-heading{
         font-size:6vw;
@@ -222,6 +224,16 @@ html {
       .slide{
         filter:brightness(100%);
       }
+      .srilanka-description img{
+        display: none;
+      }
+    }
+    .srilanka-description img{
+      position: absolute;
+      width:19vw;
+      height: auto;
+      transform: translate(40vw,-30%);
+      filter: brightness(100%);
     }
     .clipart{
       width: 100%;
