@@ -237,16 +237,16 @@ html {
     }
     .clipart{
       width: 100%;
-      max-height: 150px;
+      max-height: 180px;
       margin:0px;
-      background-color: rgb(77, 74, 74);
+      background-color: rgb(255, 255, 255);
     }
 
     footer{
       margin:0px;
       padding-bottom:10px;
-      background-color: rgb(94, 86, 86);
-      color: white;
+      background-color: rgb(255, 181, 112);
+      color: black;
       text-align: center;
     }
   /*Explore Page*/
@@ -390,12 +390,18 @@ path:nth-child(10){
   font-size: 2rem;
   color: rgb(0, 0, 0);
 }
+.container-province-list{
+  float:right;
+  width:60%;
+
+}
+
 .container-province-list ul{
   list-style: none;
 
 }
 .container-province-list li{
-  width:50%;
+  width:80%;
   float: right;
   border: 1px solid black;
   margin-bottom: 2px;
@@ -406,6 +412,22 @@ path:nth-child(10){
   font-size:20px;
   background-color: black;
   color:white;
+}
+@media screen and (max-width: 1000px) {
+  .container-province-map{
+    width: 100%;
+    transform: translateX(60%);
+  }
+  .container-province-list{
+    width: 100%;
+  }
+  .container-province-list li{
+    text-align: center;
+    transform: translateX(-10%);
+  }
+  .container{
+    text-align: center;
+  }
 }
 @keyframes showProvince{
   from{
@@ -418,10 +440,6 @@ path:nth-child(10){
 .container-province-map{
   width: 40%;
   float:left;
-}
-.container-province-list{
-  float:right;
-  width:60%;
 }
 
 .about{
@@ -524,10 +542,12 @@ path:nth-child(10){
   display: table;
   clear:both;
 }
-
 .column{
   float: left;
   width:40%;
+}
+.column2{
+  width:50%;
 }
 @media screen and (max-width: 1000px) {
   .row{
