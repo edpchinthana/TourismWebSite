@@ -3,6 +3,8 @@ html {
   overflow-x: hidden ;
 }
   body{
+    position: relative;
+    display: block;
     margin:0px;
     padding:0px;
     overflow-x: hidden;
@@ -14,7 +16,7 @@ html {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 8vh;
+  min-height: 6vh;
   max-height: 12vh;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.144);
@@ -74,6 +76,9 @@ html {
   }
   .burger{
     display:block;
+  }
+  .navBar-heading{
+    font-size:6vw;
   }
 }
 .burger div:hover{
@@ -171,6 +176,41 @@ html {
       from {opacity: .6}
       to {opacity: 1}
     }
+    .srilanka-description{
+      position: absolute;
+      color:white;
+      top:13vw;
+      background-color: rgba(0, 0, 0, 0.404);
+      transform: translateX(25%);
+      width: 60%;
+      text-align: justify;
+      font-size: 30px;
+      padding: 50px;
+      padding-bottom: 35px;
+      font-family: poppins;
+    }
+    .introduction-heading{
+      font-size:40px;
+      text-align: center;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    @media screen and (max-width:1000px){
+      .srilanka-description{
+        position: relative;
+        display: block;
+        top:auto;
+        background-color: rgba(0, 0, 0, 0);
+        color:black;
+        font-size: 4.5vw;
+        transform: translateX(10%);
+        width: 80%;
+        padding: 2vw;
+      }
+      .introduction-heading{
+        font-size:6vw;
+      }
+    }
     .clipart{
       width: 100%;
       max-height: 150px;
@@ -209,13 +249,13 @@ path:nth-child(1){
   fill:green;
 }
 path:nth-child(2){
-  fill:red;
+  fill:rgb(117, 158, 133);
 }
 path:nth-child(3){
-  fill:rgb(160, 95, 51);
+  fill:rgb(231, 59, 59);
 }
 path:nth-child(4){
-  fill:rgb(68, 167, 59);
+  fill:rgb(187, 136, 245);
 }
 path:nth-child(5){
   fill:rgb(146, 68, 16);
@@ -224,16 +264,16 @@ path:nth-child(6){
   fill:rgb(170, 113, 123);
 }
 path:nth-child(7){
-  fill:rgb(255, 3, 3);
+  fill:rgb(117, 158, 133);
 }
 path:nth-child(8){
-  fill:rgb(151, 111, 1);
+  fill:rgb(78, 133, 125);
 }
 path:nth-child(9){
   fill:rgb(85, 146, 236);
 }
 path:nth-child(10){
-  fill:rgb(146, 61, 61);
+  fill:rgb(212, 209, 22);
 }
 
 .map path:hover{
@@ -330,7 +370,6 @@ path:nth-child(10){
   list-style: none;
 
 }
-
 .container-province-list li{
   width:50%;
   float: right;
@@ -363,6 +402,7 @@ path:nth-child(10){
 
 .about{
   display: block;
+  position: relative;
   padding:0.9309941520467835VW;
   padding-left: 5.847953216374268VW;
 }
