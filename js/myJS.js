@@ -19,10 +19,10 @@ function currentSlide(n) {
 
 function previewSlides(n){
     hideAll();
-    if(n>4){
+    if(n>6){
         n=1;
     }else if(n<1){
-        n=4;
+        n=6;
     }
     index=n;
     document.getElementById("slide"+n).setAttribute("style","display:block;");
@@ -30,7 +30,7 @@ function previewSlides(n){
 
 function hideAll(){
     var i;
-    for(i=1;i<5;i++){
+    for(i=1;i<7;i++){
         document.getElementById("slide"+i).setAttribute("style","display:none;");
     }
 }

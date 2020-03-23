@@ -11,7 +11,7 @@ html {
     background-color: white;
   }
 .navBar{
-  z-index: 2;
+  z-index: 3;
   position:fixed;
   display: flex;
   justify-content: space-around;
@@ -112,6 +112,7 @@ html {
 .content-body{
   display:block;
   position: relative;
+  z-index: 2;
 }
   /*SlideShow*/
   .slideShow{ 
@@ -131,6 +132,12 @@ html {
   .slide{
       max-height: 650px;
       width: 100%;
+      filter:brightness(50%);
+  }
+  @media screen and (max-width:1000px){
+    .slide{
+      filter:brightness(100%);
+    }
   }
   
     .prev, .next {
@@ -180,14 +187,16 @@ html {
       position: absolute;
       color:white;
       top:13vw;
-      background-color: rgba(0, 0, 0, 0.404);
+      background-color: rgba(30, 60, 80, 0);
       transform: translateX(25%);
       width: 60%;
-      text-align: justify;
-      font-size: 30px;
+      text-align: center;
+      font-size: 25px;
       padding: 50px;
       padding-bottom: 35px;
       font-family: poppins;
+      line-height: 35px;
+      border-radius: 20px;
     }
     .introduction-heading{
       font-size:40px;
@@ -209,6 +218,9 @@ html {
       }
       .introduction-heading{
         font-size:6vw;
+      }
+      .slide{
+        filter:brightness(100%);
       }
     }
     .clipart{
