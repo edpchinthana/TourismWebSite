@@ -311,7 +311,7 @@ path:nth-child(10){
   width: 100%;
   height:100%;
   opacity:1;
-  top:0px;
+  top:0;
   margin:0px;
   transform: translateX(100%);
   transition:all 0.5s ease-in-out;
