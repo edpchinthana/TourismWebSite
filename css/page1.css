@@ -11,7 +11,7 @@ html {
     background-color: white;
   }
 .navBar{
-  z-index: 3;
+  z-index: 4;
   position:fixed;
   display: flex;
   justify-content: space-around;
@@ -111,12 +111,18 @@ html {
 
 .content-body{
   display:block;
-  position: relative;
+  position: static;
   z-index: 2;
+}
+.welcomeScreen{
+  display: block;
+  position: static;
+  background-color: indigo;
 }
   /*SlideShow*/
   .slideShow{ 
       display: block;
+      position: absolute;
       max-height:550px;
       width: 100%;
       margin-bottom:7.309941520467836VW;
@@ -124,12 +130,14 @@ html {
       border: 0rem;
       float: left;
       clip-path: polygon(0 100,0 0,0 0,0 0);
+      top:0rem;
   }
   
   .hideSlides{
       display: none;
   }
   .slide{
+    display: absolute;
       max-height: 650px;
       width: 100%;
       filter:brightness(50%);
@@ -187,7 +195,7 @@ html {
       position: absolute;
       color:white;
       top:13vw;
-      background-color: rgba(30, 60, 80, 0);
+      background-color: rgba(0, 146, 243, 0);
       transform: translateX(25%);
       width: 40%;
       text-align: left;
@@ -207,7 +215,7 @@ html {
     }
     @media screen and (max-width:1000px){
       .srilanka-description{
-        position: relative;
+        position: static;
         display: block;
         top:auto;
         background-color: rgba(0, 0, 0, 0);
@@ -341,7 +349,7 @@ path:nth-child(10){
   font-size: 2rem;
   padding-top: 25px;
   padding-bottom:25px;
-  padding-left: 60px;
+  padding-left: 5vw;
   font-weight: bold;
   width:100%;
   background: linear-gradient(180deg, rgb(255, 255, 255) 0%,rgb(239, 243, 248) 20%,rgb(234, 240, 252) 50%,rgb(232, 239, 255) 100%);
@@ -445,7 +453,7 @@ path:nth-child(10){
 
 .about{
   display: block;
-  position: relative;
+  position: static;
   padding:0.9309941520467835VW;
   padding-left: 5.847953216374268VW;
 }
