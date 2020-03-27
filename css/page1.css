@@ -585,51 +585,69 @@ path:nth-child(10){
 }
 .about-details{
   display: block;
-  height: 90%;
+
   width: 100%;
   position: absolute;
   top:6.5vw;
   left: 0px;
-  background-color: white;
+
   opacity: 0;
   pointer-events: none;
+  z-index: 3;
 }
 .about-details object{
-  transform: translateX(10vw);
-  width:80%;
-  height:90vh;
+  transform: translateX(7.5vw);
+  width:85%;
+  height: 95vh;
+  box-shadow: 2px 5px 20px black;
+  background-color: rgba(0, 0, 0, 0.842);
 }
 
 .visible-aboutDetailsContainer{
   opacity:1;
   pointer-events: all;
 }
-.about-details object{
-  transform: translateX(10vw);
-  width:80%;
-  height:90vh;
-}
+
 @media screen and (max-width:1000px){
   .about-details{
     top: 8vw;
   }
-  .aboutDetailsContainerInner{
-    
+  .about-details object{
+    height: 85vh;
+  }
+}
+@media screen and (max-width:850px){
+  .about-details object{
+    height: 74vh;
   }
 }
 @media screen and (max-width:700px){
   .about-details{
     top: 11vw;
   }
+  .about-details object{
+    height: 64vh;
+  }
+}
+@media screen and (max-width:600px){
+  .about-details object{
+    height: 55vh;
+  }
 }
 @media screen and (max-width:500px){
   .about-details{
     top: 14vw;
   }
+  .about-details object{
+    height: 45vh;
+  }
 }
 @media screen and (max-width:400px){
   .about-details{
-    top: 15vw;
+    top: 17vw;
+  }
+  .about-details object{
+    height: 35vh;
   }
 }
 ::-webkit-scrollbar {
