@@ -81,3 +81,8 @@ function scrollWindow(k){
     var location = element.offsetTop-50;
     window.scrollTo(0,location)
 }
+
+function load_home() {
+    document.getElementById("aboutDetailsContainter").classList.add("visible-aboutDetailsContainer");
+    document.getElementById("aboutDetailsContainter").innerHTML='<object type="text/html" data="about/wild.html" ></object>';
+}

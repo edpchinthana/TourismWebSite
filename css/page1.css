@@ -310,6 +310,7 @@ html {
     }
   /*Explore Page*/
     .explore{
+      display: block;
       position: relative;
       background: linear-gradient(180deg, rgb(228, 239, 253) 0%, rgb(212, 220, 247) 35%, rgb(212, 227, 243) 70%,rgb(234, 240, 252) 90%,rgb(255, 255, 255) 100%);
     }
@@ -394,6 +395,8 @@ path:nth-child(10){
   }
 }
 .heading{
+  display: block;
+  position: static;
   color:rgb(0, 0, 0);
   font-family: poppins;
   font-size: 2rem;
@@ -582,22 +585,36 @@ path:nth-child(10){
 }
 .about-details{
   display: block;
-  height: auto;
+  height: 90%;
   width: 100%;
   position: absolute;
-  top:5vw;
+  top:6.5vw;
   left: 0px;
-  background-color: lawngreen;
-}
-.about-details img{
-  width: 100%;
+  background-color: white;
   opacity: 0;
   pointer-events: none;
 }
+.about-details object{
+  transform: translateX(10vw);
+  width:80%;
+  height:90vh;
+}
 
+.visible-aboutDetailsContainer{
+  opacity:1;
+  pointer-events: all;
+}
+.about-details object{
+  transform: translateX(10vw);
+  width:80%;
+  height:90vh;
+}
 @media screen and (max-width:1000px){
   .about-details{
     top: 8vw;
+  }
+  .aboutDetailsContainerInner{
+    
   }
 }
 @media screen and (max-width:700px){
