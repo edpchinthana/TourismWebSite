@@ -82,7 +82,40 @@ function scrollWindow(k){
     window.scrollTo(0,location)
 }
 
-function load_home() {
+function loadPages(n) {
+    let page;
+    switch(n){
+        case 1:
+            page="about/wild.html";
+            break;
+        case 2:
+            page = "about/thrills.html";
+            break;
+        case 3:
+            page = "about/bliss.html";
+            break;
+        case 4:
+            page = "about/essence.html";
+            break;
+        case 5:
+            page = "about/festive.html";
+            break;
+        case 6:
+            page = "about/scenic.html";
+            break;
+        case 7:
+            page = "about/heritage.html";
+            break;
+        case 8:
+            page = "about/pristine.html";
+            break;
+    }
     document.getElementById("aboutDetailsContainter").classList.add("visible-aboutDetailsContainer");
-    document.getElementById("aboutDetailsContainter").innerHTML='<object type="text/html" data="about/wild.html" ></object>';
+    document.getElementById("aboutDetailsContainterParent").classList.add("visible-aboutDetailsContainer");
+    document.getElementById("aboutDetailsContainter").innerHTML='<object type="text/html" data="'+page+'" ></object>';
+}
+
+function hideAboutDetails(){
+    document.getElementById("aboutDetailsContainter").classList.remove("visible-aboutDetailsContainer");
+    document.getElementById("aboutDetailsContainterParent").classList.remove("visible-aboutDetailsContainer");
 }
