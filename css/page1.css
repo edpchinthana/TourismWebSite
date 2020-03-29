@@ -374,7 +374,7 @@ path:nth-child(10){
   margin:0px;
   transform: translateX(100%);
   transition:all 0.5s ease-in-out;
-  background-color: rgb(206, 214, 248);
+  background-color: rgb(231, 238, 255);
  
 }
 .container{
@@ -383,7 +383,6 @@ path:nth-child(10){
   padding-right: 40px;
   color: rgb(0, 0, 0);
   text-align: right;
-  
   opacity:1;
   transition: all 0.5s ease-in-out;
 }
@@ -455,12 +454,10 @@ path:nth-child(10){
 .container-province-list{
   float:right;
   width:60%;
-
 }
 
 .container-province-list ul{
   list-style: none;
-
 }
 .container-province-list li{
   width:80%;
@@ -469,6 +466,7 @@ path:nth-child(10){
   margin-bottom: 2px;
   padding-right: 10px;
   transition: all 0.3s ease-in-out;
+  background-color: white;
 }
 .container-province-list li:hover{
   font-size:20px;
