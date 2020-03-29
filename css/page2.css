@@ -33,12 +33,7 @@ body{
     position: static;
     max-height: 650px;
     width: 100%;
-    filter:brightness(50%);
-}
-@media screen and (max-width:1000px){
-  .slide{
     filter:brightness(100%);
-  }
 }
 
   .prev, .next {
@@ -54,6 +49,7 @@ body{
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
+    background-color: rgba(0, 0, 0, 0.281);
   }
 
 .next {
@@ -130,9 +126,6 @@ body{
     }
     .content h1{
       font-size: 4vw;
-    }
-    .slide{
-      filter: brightness(100%);
     }
   }
   @media screen and (max-width: 700px) {

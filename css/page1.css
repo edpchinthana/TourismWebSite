@@ -591,12 +591,13 @@ path:nth-child(10){
   opacity: 0;
   pointer-events: none;
   z-index: 3;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.7s ease-in-out;
+  width: 100%;
 }
 .about-details object{
   transform: translateX(7.5vw);
   width:85%;
-  height:85vh;
+  height:80vh;
   box-shadow: 2px 5px 20px black;
   background-color: rgb(255, 255, 255);
 }
