@@ -75,13 +75,14 @@ var lastScroll=0;
         lastScroll=scroll;
     });
 
+    //windows scroll effect
 function scrollWindow(k){
-    //window.scrollTo(0,k);
     var element = document.getElementById(k);
     var location = element.offsetTop-50;
     window.scrollTo(0,location)
 }
 
+//load about pages
 function loadPages(n) {
     let page;
     switch(n){
@@ -119,3 +120,50 @@ function hideAboutDetails(){
     document.getElementById("aboutDetailsContainter").classList.remove("visible-aboutDetailsContainer");
     document.getElementById("aboutDetailsContainterParent").classList.remove("visible-aboutDetailsContainer");
 }
+
+//load provinces pages
+var data;
+function request(){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+
+       data = JSON.parse(xhttp.responseText);
+    }
+    };
+    xhttp.open("GET", "places/data.json", true);
+    xhttp.send();
+}
+request();
+var SelectedProvince = 0;
+function showProvinces(k){
+    document.getElementById("ProvincesContainerParent").classList.add("showProvinces-visible");
+    console.log(document.getElementById("ProvincesContainerParent").classList);
+    //document.getElementById("ProvincesContainerChild").innerHTML+=data.provinces[0].places[1].name;
+    for(let x=0;x<data.provinces[k].places.length;x++){
+        let option = document.createElement("option");
+        option.text = data.provinces[k].places[x].name;
+        option.value = x;
+        document.getElementById("places").add(option);
+    }
+    SelectedProvince = k;
+    importingDetails();
+}
+function importingDetails(){
+    let k = document.getElementById("places").value;
+    console.log(k);
+    let name = data.provinces[SelectedProvince].places[k].name;
+    let description = data.provinces[SelectedProvince].places[k].description;
+    let map = data.provinces[SelectedProvince].places[k].map;
+   document.getElementById("placeDescription").innerHTML=description;
+   document.getElementById("placesImages").innerHTML="";
+   for(let x=0;x<data.provinces[SelectedProvince].places[k].photos.length;x++){
+       let image = document.createElement('img');
+       image.src = data.provinces[SelectedProvince].places[k].photos[x];
+       document.getElementById("placesImages").appendChild(image);
+    }
+   document.getElementById("placesMap").innerHTML=map;
+
+}
+
+document.getElementById("places").onchange = importingDetails;
