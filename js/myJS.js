@@ -160,7 +160,7 @@ function importingDetails(){
    for(let x=0;x<data.provinces[SelectedProvince].places[k].photos.length;x++){
        let image = document.createElement('img');
        image.src = data.provinces[SelectedProvince].places[k].photos[x];
-       document.getElementById("placesImages").appendChild(image);
+       //document.getElementById("placesImages").appendChild(image);
     }
    document.getElementById("placesMap").innerHTML=map;
 

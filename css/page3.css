@@ -80,6 +80,7 @@ body{
     padding:250px;
     position: relative;
     height: 0;
+    
 }
 .map iframe{
     position: absolute;
