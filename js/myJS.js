@@ -85,28 +85,28 @@ function loadPages(n) {
     let page;
     switch(n){
         case 1:
-            page="about/wild.html";
+            page="wild.html";
             break;
         case 2:
-            page = "about/thrills.html";
+            page = "thrills.html";
             break;
         case 3:
-            page = "about/bliss.html";
+            page = "bliss.html";
             break;
         case 4:
-            page = "about/essence.html";
+            page = "essence.html";
             break;
         case 5:
-            page = "about/festive.html";
+            page = "festive.html";
             break;
         case 6:
-            page = "about/scenic.html";
+            page = "scenic.html";
             break;
         case 7:
-            page = "about/heritage.html";
+            page = "heritage.html";
             break;
         case 8:
-            page = "about/pristine.html";
+            page = "pristine.html";
             break;
     }
     document.getElementById("aboutDetailsContainter").classList.add("visible-aboutDetailsContainer");

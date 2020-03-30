@@ -428,7 +428,7 @@ path:nth-child(10){
 
 .backButton{
   position: absolute;
-  top: -65px;
+  top: -50px;
   right: 2.5vw;
   z-index:2;
   padding: 5px;
@@ -462,6 +462,8 @@ path:nth-child(10){
   pointer-events: none;
   width: 100%;
   transition: all 0.6 ease;
+  position:absolute;
+  z-index: -5;
 }
 .showProvinceDetails{
   background-color: white;
@@ -474,7 +476,7 @@ path:nth-child(10){
 .showProvinces-visible{
   opacity: 1 !important;
   pointer-events: all !important;
-  position: absolute;
+  z-index: 4!important;
   top:0;
 }
 .placesHeading{
