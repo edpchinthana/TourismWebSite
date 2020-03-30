@@ -430,7 +430,7 @@ path:nth-child(10){
   position: absolute;
   top: -65px;
   right: 2.5vw;
-  z-index:4;
+  z-index:2;
   padding: 5px;
   padding-left:15px;
   padding-right:15px;
@@ -500,7 +500,7 @@ path:nth-child(10){
   right:5px;
 }
 .galleryButton{
-  right:50px;
+  right:80px;
 }
 .button-active{
   background-color: black !important;

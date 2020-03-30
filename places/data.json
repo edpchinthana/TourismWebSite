@@ -44,6 +44,56 @@
                     "map":"<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13231.666638721657!2d79.76627405540354!3d9.6126520971202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afe48527dac99dd%3A0x9248063fd3ffd963!2zTmFnYWRlZXBhIFJhamEgTWFoYSBWaWhhcmF5YSDgtrHgt4_gtpzgtq_gt5PgtrQg4La74LaiIOC2uOC3hOC3jyDgt4Dgt5Lgt4Tgt4_gtrvgtro!5e0!3m2!1sen!2slk!4v1583930716444!5m2!1sen!2slk' width='600' height='450' frameborder='0' style='border:0;' allowfullscreen='' aria-hidden='false' tabindex='0'></iframe>"
                     }
             ]
+        },
+        {
+            "name": "Eastern Province",
+            "places": [
+                {
+                    "name":"Trincomalee",
+                    "description":"Trincomalee is a port city on the northeast coast of Sri Lanka. Set on a peninsula, Fort Frederick was built by the Portuguese in the 17th century. Within its grounds, the grand Koneswaram Temple stands on Swami Rock cliff, a popular vantage point for blue-whale watching. The holy complex contains ornate shrines and a massive statue of Shiva. Nearby Gokanna Temple has panoramic views over the city and the coastline.",
+                    "photos":"/res/Places/Trincomalee",
+                    "numberOfPhotos":4,
+                    "map":"<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d63122.128182659355!2d81.17819709610386!3d8.583207720644776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afbbcb6902dbe27%3A0x7de76a7a331b0fbb!2sTrincomalee!5e0!3m2!1sen!2slk!4v1584429334190!5m2!1sen!2slk\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0;\" allowfullscreen=\"\" aria-hidden=\"false\" tabindex=\"0\"><\/iframe>"
+                    },
+                    {
+                    "name":"Kumana National Park",
+                    "description":"Kumana National Park in Sri Lanka is renowned for its avifauna, particularly its large flocks of migratory waterfowl and wading birds. The park is 391 kilometres southeast of Colombo on Sri Lanka's southeastern coast. Kumana is contiguous with Yala National Park.",
+                    "photos":"/res/Places/KumanaNationalPark",
+                    "numberOfPhotos":4,
+                    "map":"<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m14!1m8!1m3!1d439175.064395651!2d81.27395535313312!3d6.511698002706652!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xce605bccbb80201a!2sKumana%20National%20Park!5e0!3m2!1sen!2slk!4v1584429634787!5m2!1sen!2slk\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0;\" allowfullscreen=\"\" aria-hidden=\"false\" tabindex=\"0\"><\/iframe>"
+                    }
+            ]
+        },
+        {
+            "name": "North Western Province",
+            "places": [
+                {
+                    "name":"Wilpattu National Park",
+                    "description":"Wilpattu National Park is a park located on the island of Sri Lanka. The unique feature of this park is the existence of 'Willus' - Natural, sand-rimmed water basins or depressions that fill with rainwater. Located in the Northwest coast lowland dry zone of Sri Lanka.",
+                    "photos":"/res/Places/WilpattuNationalPark",
+                    "numberOfPhotos":4,
+                    "map":"<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m14!1m8!1m3!1d505202.2333868654!2d79.76748693281246!3d8.412223050730685!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcdd9a0715dad187c!2sWilpattu%20National%20Park!5e0!3m2!1sen!2slk!4v1584459964463!5m2!1sen!2slk\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0;\" allowfullscreen=\"\" aria-hidden=\"false\" tabindex=\"0\"><\/iframe>"
+                    } 
+            ]
+        },
+        {
+            "name": "Central Province",
+            "places": [
+                {
+                    "name":"Sigiriya",
+                    "description":"Sigiriya or Sinhagiri is an ancient rock fortress located in the northern Matale District near the town of Dambulla in the Central Province, Sri Lanka. The name refers to a site of historical and archaeological significance that is dominated by a massive column of rock nearly 200 metres high.",
+                    "photos":"/res/Places/Sigiriya",
+                    "numberOfPhotos":4,
+                    "map":"<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m14!1m8!1m3!1d15805.633444971303!2d80.75032773220218!3d7.956682373935967!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x762e72bb619aef0c!2sSigiriya%20Fortress!5e0!3m2!1sen!2slk!4v1584461444260!5m2!1sen!2slk\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0;\" allowfullscreen=\"\" aria-hidden=\"false\" tabindex=\"0\"><\/iframe>"
+                    },
+                    {
+                    "name":"Temple of The Tooth Relic",
+                    "description":"Sri Dalada Maligawa or the Temple of the Sacred Tooth Relic is a Buddhist temple in the city of Kandy, Sri Lanka. It is located in the royal palace complex of the former Kingdom of Kandy, which houses the relic of the tooth of the Buddha.",
+                    "photos":"res/Places/TempleOfTheToothRelic",
+                    "numberOfPhotos":4,
+                    "map":"<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m14!1m8!1m3!1d15830.193735107883!2d80.63556388405601!3d7.2921054649193175!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8165d70ac115e887!2sTemple%20of%20the%20Sacred%20Tooth%20Relic!5e0!3m2!1sen!2slk!4v1584460825418!5m2!1sen!2slk\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0;\" allowfullscreen=\"\" aria-hidden=\"false\" tabindex=\"0\"><\/iframe>"
+                    }
+            ]
         }
     ]
 }
