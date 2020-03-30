@@ -63,8 +63,6 @@ var lastScroll=0;
     navSlide();
     window.addEventListener("scroll", function (event) {
         var scroll = this.scrollY;
-        
-        console.log(scroll);
         if(scroll===0){
             var navBar= document.getElementById('navBar');
             navBar.style.background='rgba(0, 0, 0, 0.144)';
@@ -122,7 +120,7 @@ function hideAboutDetails(){
 }
 
 //load provinces pages
-var data;
+var data=null;
 function request(){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -135,11 +133,19 @@ function request(){
     xhttp.send();
 }
 request();
+
+//Initial values
 var SelectedProvince = 0;
+var SelectedPlace = 0;
+var SelectedPhoto = 0;
+
+//Show province details
 function showProvinces(k){
     document.getElementById("ProvincesContainerParent").classList.add("showProvinces-visible");
-    console.log(document.getElementById("ProvincesContainerParent").classList);
-    //document.getElementById("ProvincesContainerChild").innerHTML+=data.provinces[0].places[1].name;
+    let i, L = document.getElementById("places").options.length - 1;
+   for(i = L; i >= 0; i--) {
+    document.getElementById("places").remove(i);
+   }
     for(let x=0;x<data.provinces[k].places.length;x++){
         let option = document.createElement("option");
         option.text = data.provinces[k].places[x].name;
@@ -147,23 +153,31 @@ function showProvinces(k){
         document.getElementById("places").add(option);
     }
     SelectedProvince = k;
+    SelectedPlace = 0;
     importingDetails();
+    console.log(k);
 }
+
+//Close province details
+function closePlaces(){
+    document.getElementById("ProvincesContainerParent").classList.remove("showProvinces-visible");
+    //SelectedPlace=0;
+    //SelectedProvince=0;
+    //SelectedPhoto=0;
+}
+
+
 function importingDetails(){
     let k = document.getElementById("places").value;
-    console.log(k);
+    SelectedPlace = k;
+    SelectedPhoto = 0;
     let name = data.provinces[SelectedProvince].places[k].name;
     let description = data.provinces[SelectedProvince].places[k].description;
     let map = data.provinces[SelectedProvince].places[k].map;
    document.getElementById("placeDescription").innerHTML=description;
-   for(let x=0;x<data.provinces[SelectedProvince].places[k].photos.length;x++){
-       let image = document.createElement('img');
-       image.src = data.provinces[SelectedProvince].places[k].photos[x];
-       //document.getElementById("placesImages").appendChild(image);
-       document.getElementById("placesImage").src=data.provinces[SelectedProvince].places[k].photos[0];
-    }
-   document.getElementById("placesMap").innerHTML=map;
+    document.getElementById("placesImage").src=data.provinces[SelectedProvince].places[SelectedPlace].photos+"/photo"+(SelectedPhoto+1)+".jpg";
 
+   document.getElementById("placesMap").innerHTML=map;
 }
 
 document.getElementById("places").onchange = importingDetails;
@@ -185,3 +199,22 @@ document.getElementById("galleryButton").addEventListener("click", function(){
     document.getElementById("placesImagesContainer").classList.remove("placesImagesContainer-hidden");
     document.getElementById("placesMap").classList.add("placesImagesContainer-hidden");
   });
+
+  //Prev button
+function prevPhoto(){
+    if(SelectedPhoto===0){
+        SelectedPhoto = data.provinces[SelectedProvince].places[SelectedPlace].numberOfPhotos-1;
+    }else{
+        SelectedPhoto = SelectedPhoto - 1;
+    }
+    document.getElementById("placesImage").src=data.provinces[SelectedProvince].places[SelectedPlace].photos+"/photo"+(SelectedPhoto+1)+".jpg";
+  }
+  //Next button
+  function nextPhoto(){
+    if(SelectedPhoto===data.provinces[SelectedProvince].places[SelectedPlace].numberOfPhotos-1){
+        SelectedPhoto=0;
+    }else{
+        SelectedPhoto = SelectedPhoto + 1;
+    }
+    document.getElementById("placesImage").src=data.provinces[SelectedProvince].places[SelectedPlace].photos+"/photo"+(SelectedPhoto+1)+".jpg";
+}

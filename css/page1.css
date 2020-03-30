@@ -461,7 +461,7 @@ path:nth-child(10){
   opacity: 0;
   pointer-events: none;
   width: 100%;
-  
+  transition: all 0.6 ease;
 }
 .showProvinceDetails{
   background-color: white;
@@ -469,6 +469,7 @@ path:nth-child(10){
   width:90%;
   transform: translateX(5vw);
   overflow-x: hidden;
+  transition: all 0.6 ease;
 }
 .showProvinces-visible{
   opacity: 1 !important;
@@ -545,15 +546,28 @@ path:nth-child(10){
   position:absolute !important;
   pointer-events: none !important;
   opacity: 0 !important;
+  width: 0;
 }
 .placesImagesContainer img{
   width: auto;
+  margin:auto;
+  display: block;
   position: absolute;
   top:0;
   left:0;
   height:100%;
   pointer-events: none;
   
+}
+.placesNextButton{
+  position: absolute;
+  right: 0;
+  top: 0vh;
+}
+.placesPrevButton{
+  position: absolute;
+  right: 30px;
+  top: 0vh;
 }
 .placesMap{
   position: relative;
