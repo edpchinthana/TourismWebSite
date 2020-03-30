@@ -352,15 +352,19 @@ Endless beaches, timeless ruins, welcoming people, oodles of elephants, rolling 
       </div>
       <div id="ProvincesContainerParent" class="showProvinces">
         <div id="ProvincesContainerChild" class="showProvinceDetails">
-          <div style="width:100%">
+          <div class="placesHeading">
             <select id="places">
             </select>
+            <button id="galleryButton" class="button-active galleryButton">Gallery</button>
+            <button id="mapButton" class="mapButton">Map</button>
           </div>  
             <div id="placeDescription" class="placeDescription">
             </div>
             <div class="placesImageMapContainer">
-              <div id="placesImages"></div>
-              <div id="placesMap" class="placesMap"></div>
+              <div id="placesImagesContainer" class="placesImagesContainer">
+                <img id="placesImage" src="" alt="">
+              </div>
+              <div id="placesMap" class="placesMap placesImagesContainer-hidden"></div>
             </div>
         </div>
       </div>

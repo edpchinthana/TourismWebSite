@@ -156,14 +156,32 @@ function importingDetails(){
     let description = data.provinces[SelectedProvince].places[k].description;
     let map = data.provinces[SelectedProvince].places[k].map;
    document.getElementById("placeDescription").innerHTML=description;
-   document.getElementById("placesImages").innerHTML="";
    for(let x=0;x<data.provinces[SelectedProvince].places[k].photos.length;x++){
        let image = document.createElement('img');
        image.src = data.provinces[SelectedProvince].places[k].photos[x];
        //document.getElementById("placesImages").appendChild(image);
+       document.getElementById("placesImage").src=data.provinces[SelectedProvince].places[k].photos[0];
     }
    document.getElementById("placesMap").innerHTML=map;
 
 }
 
 document.getElementById("places").onchange = importingDetails;
+
+//map button
+document.getElementById("mapButton").addEventListener("click", function(){
+    document.getElementById("mapButton").classList.add("button-active");
+    document.getElementById("galleryButton").classList.remove("button-active");
+
+    document.getElementById("placesImagesContainer").classList.add("placesImagesContainer-hidden");
+    document.getElementById("placesMap").classList.remove("placesImagesContainer-hidden");
+  });
+
+//gallery button
+document.getElementById("galleryButton").addEventListener("click", function(){
+    document.getElementById("galleryButton").classList.add("button-active");
+    document.getElementById("mapButton").classList.remove("button-active");
+
+    document.getElementById("placesImagesContainer").classList.remove("placesImagesContainer-hidden");
+    document.getElementById("placesMap").classList.add("placesImagesContainer-hidden");
+  });

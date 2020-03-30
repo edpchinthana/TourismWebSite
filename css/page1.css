@@ -476,6 +476,32 @@ path:nth-child(10){
   position: absolute;
   top:0;
 }
+.placesHeading{
+  width: 100%;
+}
+.placesHeading button{
+  font-size: 18px;
+  font-family: poppins;
+  margin: 0;
+  border: 2px solid black;
+  border-radius: 4px;
+  padding: 6px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  position: absolute;
+  top:5px;
+  transition: all 0.6s ease;
+}
+.mapButton{
+  right:5px;
+}
+.galleryButton{
+  right:55px;
+}
+.button-active{
+  background-color: black !important;
+  color:white !important;
+}
 .showProvinceDetails select{
   font-size:25px;
   font-family: poppins;
@@ -498,10 +524,35 @@ path:nth-child(10){
   float: left;
   padding: 2vw;
 }
+.placesImagesContainer{
+  position: relative;
+  overflow: hidden;
+  padding-top: 50%;
+  opacity:1;
+  pointer-events: all;
+  transition: all 0.6s ease;
+}
+.placesImagesContainer-hidden{
+  position:absolute !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+}
+.placesImagesContainer img{
+  width: auto;
+  position: absolute;
+  top:0;
+  left:0;
+  height:100%;
+  pointer-events: none;
+  
+}
 .placesMap{
   position: relative;
   overflow: hidden;
-  padding-top: 60%;
+  padding-top: 50%;
+  opacity:1;
+  pointer-events: all;
+  transition: all 0.6s ease;
 }
 .placesMap iframe{
   position: absolute;
