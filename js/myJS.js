@@ -174,7 +174,11 @@ function importingDetails(){
     let name = data.provinces[SelectedProvince].places[k].name;
     let description = data.provinces[SelectedProvince].places[k].description;
     let map = data.provinces[SelectedProvince].places[k].map;
-   document.getElementById("placeDescription").innerHTML=description;
+
+    document.getElementById("placeDescription").opacity=0;
+    document.getElementById("placeDescription").innerHTML=description;
+    document.getElementById("placeDescription").opacity=1;
+
    document.getElementById("placesImages").innerHTML="";
     for(let x = 0;x<data.provinces[SelectedProvince].places[SelectedPlace].numberOfPhotos;x++){
         let image = document.createElement("img");
