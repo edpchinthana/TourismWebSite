@@ -328,7 +328,7 @@ html {
 .map path{
   box-shadow: 10px 10px 10px black;
   stroke:none;
-  transition-duration:0.8s;
+  transition-duration:0.6s;
   transition-property: fill;
   cursor: pointer;
 }
@@ -342,19 +342,19 @@ path:nth-child(3){
   fill:rgb(231, 59, 59);
 }
 path:nth-child(4){
-  fill:rgb(187, 136, 245);
+  fill:rgb(159, 83, 247);
 }
 path:nth-child(5){
   fill:rgb(146, 68, 16);
 }
 path:nth-child(6){
-  fill:rgb(170, 113, 123);
+  fill:rgb(173, 57, 78);
 }
 path:nth-child(7){
-  fill:rgb(117, 158, 133);
+  fill:rgb(31, 87, 52);
 }
 path:nth-child(8){
-  fill:rgb(78, 133, 125);
+  fill:rgb(56, 104, 97);
 }
 path:nth-child(9){
   fill:rgb(85, 146, 236);
@@ -365,7 +365,6 @@ path:nth-child(10){
 
 .map path:hover{
   fill:rgb(0, 0, 0);
-
   stroke-width: 1rem;
 }
 .showDetails-container{
@@ -478,9 +477,11 @@ path:nth-child(10){
   pointer-events: all !important;
   z-index: 4!important;
   top:0;
+  transition: all 0.6 ease;
 }
 .placesHeading{
   width: 100%;
+  transition: all 0.6 ease;
 }
 .placesHeading button{
   font-size: 15px;
@@ -516,6 +517,7 @@ path:nth-child(10){
   padding: 2px;
   width: 40%;
   margin: 5px;
+  transition: all 0.6 ease;
 }
 .placeDescription{
   position: static;
@@ -525,11 +527,6 @@ path:nth-child(10){
   padding:2vw;
   font-family: poppins;
   
-  -webkit-transition: opacity .5s ease-in-out;
-  -moz-transition: opacity .5s ease-in-out;
-  -ms-transition: opacity .5s ease-in-out;
-  -o-transition: opacity .5s ease-in-out;
-  transition: opacity .5s ease-in-out;
 }
 .placesImageMapContainer{
   width:60%;
@@ -559,7 +556,7 @@ path:nth-child(10){
   left:0;
   height:100%;
   pointer-events: none;
-  
+  transition:all 0.8s ease;
 }
 .placesNextButton{
   position: absolute;

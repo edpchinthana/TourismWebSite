@@ -175,8 +175,16 @@ function importingDetails(){
     let description = data.provinces[SelectedProvince].places[k].description;
     let map = data.provinces[SelectedProvince].places[k].map;
    document.getElementById("placeDescription").innerHTML=description;
-    document.getElementById("placesImage").src=data.provinces[SelectedProvince].places[SelectedPlace].photos+"/photo"+(SelectedPhoto+1)+".jpg";
-
+   document.getElementById("placesImages").innerHTML="";
+    for(let x = 0;x<data.provinces[SelectedProvince].places[SelectedPlace].numberOfPhotos;x++){
+        let image = document.createElement("img");
+        image.id = "placesImage"+x;
+        image.style.opacity=0;
+        image.style.pointerEvents="none";
+        image.src = data.provinces[SelectedProvince].places[SelectedPlace].photos+"/photo"+(x+1)+".jpg";
+        document.getElementById("placesImages").appendChild(image);
+    }
+   document.getElementById("placesImage0").style.opacity=1;
    document.getElementById("placesMap").innerHTML=map;
 }
 
@@ -202,19 +210,21 @@ document.getElementById("galleryButton").addEventListener("click", function(){
 
   //Prev button
 function prevPhoto(){
+    document.getElementById("placesImage"+SelectedPhoto).style.opacity=0;
     if(SelectedPhoto===0){
         SelectedPhoto = data.provinces[SelectedProvince].places[SelectedPlace].numberOfPhotos-1;
     }else{
         SelectedPhoto = SelectedPhoto - 1;
     }
-    document.getElementById("placesImage").src=data.provinces[SelectedProvince].places[SelectedPlace].photos+"/photo"+(SelectedPhoto+1)+".jpg";
+    document.getElementById("placesImage"+SelectedPhoto).style.opacity=1;
   }
   //Next button
   function nextPhoto(){
+    document.getElementById("placesImage"+SelectedPhoto).style.opacity=0;
     if(SelectedPhoto===data.provinces[SelectedProvince].places[SelectedPlace].numberOfPhotos-1){
         SelectedPhoto=0;
     }else{
         SelectedPhoto = SelectedPhoto + 1;
     }
-    document.getElementById("placesImage").src=data.provinces[SelectedProvince].places[SelectedPlace].photos+"/photo"+(SelectedPhoto+1)+".jpg";
+    document.getElementById("placesImage"+SelectedPhoto).style.opacity=1;
 }
