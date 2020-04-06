@@ -129,7 +129,7 @@ function request(){
        data = JSON.parse(xhttp.responseText);
     }
     };
-    xhttp.open("GET", "places/data.json", true);
+    xhttp.open("GET", "data.json", true);
     xhttp.send();
 }
 request();
@@ -161,6 +161,7 @@ function showProvinces(k){
 //Close province details
 function closePlaces(){
     document.getElementById("ProvincesContainerParent").classList.remove("showProvinces-visible");
+    typeExplore('Explore');
     //SelectedPlace=0;
     //SelectedProvince=0;
     //SelectedPhoto=0;

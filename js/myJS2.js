@@ -44,7 +44,7 @@ function typeExplore(k){
         document.querySelector('.heading').textContent=letter;
         count1++;
         if(count1<text.length){
-            setTimeout(type,80);
+            setTimeout(type,40);
         }
     }());
 }
