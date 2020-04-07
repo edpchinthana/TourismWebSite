@@ -185,11 +185,13 @@ function importingDetails(){
         let image = document.createElement("img");
         image.id = "placesImage"+x;
         image.style.opacity=0;
+
         image.style.pointerEvents="none";
         image.src = data.provinces[SelectedProvince].places[SelectedPlace].photos+"/photo"+(x+1)+".jpg";
         document.getElementById("placesImages").appendChild(image);
     }
    document.getElementById("placesImage0").style.opacity=1;
+
    document.getElementById("placesMap").innerHTML=map;
 }
 
@@ -216,12 +218,14 @@ document.getElementById("galleryButton").addEventListener("click", function(){
   //Prev button
 function prevPhoto(){
     document.getElementById("placesImage"+SelectedPhoto).style.opacity=0;
+
     if(SelectedPhoto===0){
         SelectedPhoto = data.provinces[SelectedProvince].places[SelectedPlace].numberOfPhotos-1;
     }else{
         SelectedPhoto = SelectedPhoto - 1;
     }
     document.getElementById("placesImage"+SelectedPhoto).style.opacity=1;
+
   }
   //Next button
   function nextPhoto(){

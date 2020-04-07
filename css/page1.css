@@ -535,6 +535,7 @@ path:nth-child(10){
   float: left;
   padding:2vw;
   font-family: poppins;
+  background-color: yellow;
 }
 .placesImageMapContainer{
   width:60%;
@@ -548,6 +549,8 @@ path:nth-child(10){
   opacity:1;
   pointer-events: all;
   transition: all 0.6s ease;
+  text-align: center;
+
 }
 .placesImagesContainer-hidden{
   position:absolute !important;
@@ -561,10 +564,10 @@ path:nth-child(10){
   display: block;
   position: absolute;
   top:0;
-  left:0;
   height:100%;
   pointer-events: none;
   transition:all 0.8s ease;
+
 }
 .placesNextButton{
   position: absolute;
