@@ -493,15 +493,17 @@ path:nth-child(10){
   max-height:70vh;
   overflow-y: scroll;
   overflow-x: hidden;
-
+  transform: translateX(-10%);
+  transition: all 0.5s ease;
   opacity: 0;
   position: absolute;
   pointer-events: none;
 }
 .places-Container-active{
+  transform: translateX(0%);
   opacity: 1;
   pointer-events: inherit;
-  position: relative;
+  
 }
 .places-ImageMapContainer{
   position: relative;
@@ -509,6 +511,12 @@ path:nth-child(10){
   width: 60%;
   float: right;
   padding: 10px;
+
+}
+.places-ImageMapContainer-active{
+  opacity: 1!important;
+  pointer-events: all!important;
+  position: relative!important;
 }
 .places-Buttons{
   position: absolute;
@@ -542,9 +550,11 @@ path:nth-child(10){
 }
 
 .places-imageContainer{
-  position:relative;
+  position:absolute;
   width: auto;
-  height: 100%;
+  height: auto;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .places-image{
@@ -556,7 +566,24 @@ path:nth-child(10){
 }
 .places-image-visible{
   position: relative!important;
-  opacity: 1!important;
+  opacity: inherit!important;
+}
+
+.places-map-container{
+  position: absolute;
+  top:0;
+  left:0;
+  pointer-events: none;
+  opacity: 0;
+  width: 0%;
+  height: 0px;
+}
+.places-map-container iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .about{
   display: block;

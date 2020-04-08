@@ -137,7 +137,9 @@ request();
 //Initial values
 var SelectedProvince = 0;
 var SelectedPlace = 0;
-var SelectedPhoto = 0;
+var SelectedImage = 0;
+var SelectedMenu = 0;
+
 
 //Show province details
 function showProvinces(k){
@@ -166,6 +168,7 @@ function showProvinces(k){
         let galleryButton = document.createElement("button");
         galleryButton.id = "place"+x+"-galleryButton";
         galleryButton.innerHTML="Gallery";
+        galleryButton.setAttribute('onclick','changeMenu(0)');
         galleryButton.classList.add("places-Buttons");
         galleryButton.classList.add("galleryButton");
         galleryButton.classList.add("placesButtons-active");
@@ -174,13 +177,15 @@ function showProvinces(k){
         let weatherButton = document.createElement("button");
         weatherButton.id = "place"+x+"-weatherButton";
         weatherButton.innerHTML = "Weather";
+        weatherButton.setAttribute('onclick','changeMenu(1)');
         weatherButton.classList.add("places-Buttons");
         weatherButton.classList.add("weatherButton");
         imageMapContainer.appendChild(weatherButton);
 
         let locationButton = document.createElement("button");
-        locationButton.id = "place"+x+"locationButton";
+        locationButton.id = "place"+x+"-locationButton";
         locationButton.innerHTML = "Location"
+        locationButton.setAttribute('onclick','changeMenu(2)');
         locationButton.classList.add("places-Buttons");
         locationButton.classList.add("locationButton");
         imageMapContainer.appendChild(locationButton);
@@ -200,6 +205,15 @@ function showProvinces(k){
             imageContainer.appendChild(image);
         }
         imageMapContainer.appendChild(imageContainer);
+
+        let weatherContainer = document.createElement("div");
+
+        let locationContainer = document.createElement("div");
+        locationContainer.id = "place"+x+"-locationContainer";
+        locationContainer.classList.add("places-map-container");
+        locationContainer.innerHTML = data.provinces[k].places[x].map;
+        imageMapContainer.appendChild(locationContainer);
+
         let description = data.provinces[k].places[x].description;
         parentDiv.innerHTML+=description;
 
@@ -207,11 +221,13 @@ function showProvinces(k){
 
         if(x==0){
             parentDiv.classList.add("places-Container-active");
+            document.getElementById("place0-imageContainer").classList.add("places-ImageMapContainer-active");
         }
     }
     SelectedProvince = k;
     SelectedPlace = 0;
-    console.log(k);
+    SelectedImage = 0;
+    SelectedMenu = 0;
 }
 
 //Close province details
@@ -223,34 +239,36 @@ function closePlaces(){
 }
 
 
-function importingDetails(){
-    let k = document.getElementById("placesComboBox").value;
-    SelectedPlace = k;
-    SelectedPhoto = 0;
-    let name = data.provinces[SelectedProvince].places[k].name;
-    let description = data.provinces[SelectedProvince].places[k].description;
-    let map = data.provinces[SelectedProvince].places[k].map;
-    document.getElementById("places-Container").innerHTML=description;
-/*
-   document.getElementById("placesImages").innerHTML="";
-    for(let x = 0;x<data.provinces[SelectedProvince].places[SelectedPlace].numberOfPhotos;x++){
-        let image = document.createElement("img");
-        image.id = "placesImage"+x;
-        image.style.opacity=0;
-
-        image.style.pointerEvents="none";
-        image.src = data.provinces[SelectedProvince].places[SelectedPlace].photos+"/photo"+(x+1)+".jpg";
-        document.getElementById("placesImages").appendChild(image);
-    }
-   document.getElementById("placesImage0").style.opacity=1;
-
-   document.getElementById("placesMap").innerHTML=map;*/
-}
 
 function changePlace(){
     let k = document.getElementById("placesComboBox").value;
-
+    document.getElementById("place"+SelectedPlace+"-Container").classList.remove("places-Container-active");
+    document.getElementById("place"+k+"-Container").classList.add("places-Container-active");
+    console.log(k);
+    SelectedPlace = k;
 }
 
+function changeMenu(k){
+    if(SelectedMenu==0){
+        document.getElementById("place"+SelectedPlace+"-imageContainer").classList.remove("places-ImageMapContainer-active");
+        document.getElementById("place"+SelectedPlace+"-galleryButton").classList.remove("placesButtons-active");
+    }else if(SelectedMenu==1){
+        document.getElementById("place"+SelectedPlace+"-weatherButton").classList.remove("placesButtons-active");
+    }else{
+        document.getElementById("place"+SelectedPlace+"-locationContainer").classList.remove("places-ImageMapContainer-active");
+        document.getElementById("place"+SelectedPlace+"-locationButton").classList.remove("placesButtons-active");
+    }
+    
+    if(k==0){
+        document.getElementById("place"+SelectedPlace+"-imageContainer").classList.add("places-ImageMapContainer-active");
+        document.getElementById("place"+SelectedPlace+"-galleryButton").classList.add("placesButtons-active");
+    }else if(k==1){
+        document.getElementById("place"+SelectedPlace+"-weatherButton").classList.add("placesButtons-active");
+    }else{
+        document.getElementById("place"+SelectedPlace+"-locationContainer").classList.add("places-ImageMapContainer-active");
+        document.getElementById("place"+SelectedPlace+"-locationButton").classList.add("placesButtons-active");
+    }
+    SelectedMenu = k;
+}
 document.getElementById("placesComboBox").onchange = changePlace;
 
