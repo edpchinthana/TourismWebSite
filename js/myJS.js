@@ -147,20 +147,77 @@ function showProvinces(k){
     document.getElementById("placesComboBox").remove(i);
    }
     for(let x=0;x<data.provinces[k].places.length;x++){
+        //adding options to combobox
         let option = document.createElement("option");
         option.text = data.provinces[k].places[x].name;
         option.value = x;
         document.getElementById("placesComboBox").add(option);
+
+        //adding places details to containers
+        let parentDiv = document.createElement("div");
+        parentDiv.id = "place"+x+"-Container";
+        parentDiv.classList.add("places-Container");
+
+        let imageMapContainer = document.createElement("div");
+        imageMapContainer.id = "place"+x+"-imageMapContainer";
+        imageMapContainer.classList.add("places-ImageMapContainer");
+        parentDiv.appendChild(imageMapContainer);
+
+        let galleryButton = document.createElement("button");
+        galleryButton.id = "place"+x+"-galleryButton";
+        galleryButton.innerHTML="Gallery";
+        galleryButton.classList.add("places-Buttons");
+        galleryButton.classList.add("galleryButton");
+        galleryButton.classList.add("placesButtons-active");
+        imageMapContainer.appendChild(galleryButton);
+
+        let weatherButton = document.createElement("button");
+        weatherButton.id = "place"+x+"-weatherButton";
+        weatherButton.innerHTML = "Weather";
+        weatherButton.classList.add("places-Buttons");
+        weatherButton.classList.add("weatherButton");
+        imageMapContainer.appendChild(weatherButton);
+
+        let locationButton = document.createElement("button");
+        locationButton.id = "place"+x+"locationButton";
+        locationButton.innerHTML = "Location"
+        locationButton.classList.add("places-Buttons");
+        locationButton.classList.add("locationButton");
+        imageMapContainer.appendChild(locationButton);
+
+        let imageContainer = document.createElement("div");
+        imageContainer.classList.add("places-imageContainer");
+        imageContainer.id = "place"+x+"-imageContainer";
+
+        for(let y=0;y<data.provinces[k].places[x].numberOfPhotos;y++){
+            let image = document.createElement("img");
+            image.id = "place"+x+"-image"+y;
+            image.src = data.provinces[k].places[x].photos+"/photo"+(y+1)+".jpg";
+            image.classList.add("places-image");
+            if(y==0){
+                image.classList.add("places-image-visible");
+            }
+            imageContainer.appendChild(image);
+        }
+        imageMapContainer.appendChild(imageContainer);
+        let description = data.provinces[k].places[x].description;
+        parentDiv.innerHTML+=description;
+
+        document.getElementById("places-Container").appendChild(parentDiv);
+
+        if(x==0){
+            parentDiv.classList.add("places-Container-active");
+        }
     }
     SelectedProvince = k;
     SelectedPlace = 0;
-    //importingDetails();
     console.log(k);
 }
 
 //Close province details
 function closePlaces(){
     document.getElementById("showProvincesContainer").classList.remove("showProvinces-Container-Visible");
+    document.getElementById("places-Container").innerHTML="";
     typeExplore('Explore');
 
 }
@@ -190,5 +247,10 @@ function importingDetails(){
    document.getElementById("placesMap").innerHTML=map;*/
 }
 
-document.getElementById("placesComboBox").onchange = importingDetails;
+function changePlace(){
+    let k = document.getElementById("placesComboBox").value;
+
+}
+
+document.getElementById("placesComboBox").onchange = changePlace;
 

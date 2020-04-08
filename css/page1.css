@@ -440,11 +440,11 @@ path:nth-child(10){
   height: 80vh;
   opacity: 0;
   pointer-events: none;
-  
   background-color: white;
   box-shadow: 2px 2px 10px black;
   transition: all 0.3s ease-in-out;
 }
+
 .showProvinces-Container-Visible{
   opacity: 1 !important;
   pointer-events: all;
@@ -493,16 +493,70 @@ path:nth-child(10){
   max-height:70vh;
   overflow-y: scroll;
   overflow-x: hidden;
+
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.places-Container-active{
+  opacity: 1;
+  pointer-events: inherit;
+  position: relative;
 }
 .places-ImageMapContainer{
-  height: 50vh;
+  position: relative;
+  height: 70vh;
   width: 60%;
   float: right;
   padding: 10px;
 }
-.places-ImageMapContainer img{
+.places-Buttons{
+  position: absolute;
+  top: 7px;
+  background-color: white;
+  color:black;
+  font-size: 15px;
+  padding:3px;
+  padding-left: 10px;
+  padding-right: 15px;
+  border-radius: 5px;
+  border: 1px  solid black;
+  box-shadow: 2px 2px 5px black;
+  transition: all 0.4s ease;
+  z-index: 2;
+}
+.galleryButton{
+  right:160px;
+}
+
+.weatherButton{
+  right:85px;
+}
+
+.locationButton{
+  right:10px;
+}
+.placesButtons-active{
+  color:white;
+  background-color: black;
+}
+
+.places-imageContainer{
+  position:relative;
   width: auto;
   height: 100%;
+}
+
+.places-image{
+  width: auto;
+  height: 250px;
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+}
+.places-image-visible{
+  position: relative!important;
+  opacity: 1!important;
 }
 .about{
   display: block;
