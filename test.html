@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .container-Heading{
+            display: flex;
+            width: 100%;
+        }
+        .container-body{
+
+        }
+        .combo-box{
+            width:60%;
+            padding: 5px;
+           
+            background-color: yellow;
+            position: relative;
+        }
+        .combo-box select{
+            font-size: 1rem;
+        }
+        .combo-box option{
+            position: absolute;
+            transform: translateX(60px);
+            opacity: 0;
+        }
+        .combo-box option:after{
+            opacity: 0;
+        }
+        .buttons{
+            width: 40%;
+            background-color: green;
+        }
+    </style>
+    <div class="container-Heading">
+        <div class="combo-box">
+            <select>
+                <option>First Option</option>
+                <option>Second Option</option>
+            </select>
+        </div>
+        <div class="buttons">
+            <button>Gallery</button>
+            <button>Location</button>
+        </div>
+    </div>
+    <div class="container-Body">
+
+    </div>
+
+</body>
+</html>

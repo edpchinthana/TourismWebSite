@@ -141,45 +141,40 @@ var SelectedPhoto = 0;
 
 //Show province details
 function showProvinces(k){
-    document.getElementById("ProvincesContainerParent").classList.add("showProvinces-visible");
-    let i, L = document.getElementById("places").options.length - 1;
+    document.getElementById("showProvincesContainer").classList.add("showProvinces-Container-Visible");
+    let i, L = document.getElementById("placesComboBox").options.length - 1;
    for(i = L; i >= 0; i--) {
-    document.getElementById("places").remove(i);
+    document.getElementById("placesComboBox").remove(i);
    }
     for(let x=0;x<data.provinces[k].places.length;x++){
         let option = document.createElement("option");
         option.text = data.provinces[k].places[x].name;
         option.value = x;
-        document.getElementById("places").add(option);
+        document.getElementById("placesComboBox").add(option);
     }
     SelectedProvince = k;
     SelectedPlace = 0;
-    importingDetails();
+    //importingDetails();
     console.log(k);
 }
 
 //Close province details
 function closePlaces(){
-    document.getElementById("ProvincesContainerParent").classList.remove("showProvinces-visible");
+    document.getElementById("showProvincesContainer").classList.remove("showProvinces-Container-Visible");
     typeExplore('Explore');
-    //SelectedPlace=0;
-    //SelectedProvince=0;
-    //SelectedPhoto=0;
+
 }
 
 
 function importingDetails(){
-    let k = document.getElementById("places").value;
+    let k = document.getElementById("placesComboBox").value;
     SelectedPlace = k;
     SelectedPhoto = 0;
     let name = data.provinces[SelectedProvince].places[k].name;
     let description = data.provinces[SelectedProvince].places[k].description;
     let map = data.provinces[SelectedProvince].places[k].map;
-
-    document.getElementById("placeDescription").opacity=0;
-    document.getElementById("placeDescription").innerHTML=description;
-    document.getElementById("placeDescription").opacity=1;
-
+    document.getElementById("places-Container").innerHTML=description;
+/*
    document.getElementById("placesImages").innerHTML="";
     for(let x = 0;x<data.provinces[SelectedProvince].places[SelectedPlace].numberOfPhotos;x++){
         let image = document.createElement("img");
@@ -192,48 +187,8 @@ function importingDetails(){
     }
    document.getElementById("placesImage0").style.opacity=1;
 
-   document.getElementById("placesMap").innerHTML=map;
+   document.getElementById("placesMap").innerHTML=map;*/
 }
 
-document.getElementById("places").onchange = importingDetails;
+document.getElementById("placesComboBox").onchange = importingDetails;
 
-//map button
-document.getElementById("mapButton").addEventListener("click", function(){
-    document.getElementById("mapButton").classList.add("button-active");
-    document.getElementById("galleryButton").classList.remove("button-active");
-
-    document.getElementById("placesImagesContainer").classList.add("placesImagesContainer-hidden");
-    document.getElementById("placesMap").classList.remove("placesImagesContainer-hidden");
-  });
-
-//gallery button
-document.getElementById("galleryButton").addEventListener("click", function(){
-    document.getElementById("galleryButton").classList.add("button-active");
-    document.getElementById("mapButton").classList.remove("button-active");
-
-    document.getElementById("placesImagesContainer").classList.remove("placesImagesContainer-hidden");
-    document.getElementById("placesMap").classList.add("placesImagesContainer-hidden");
-  });
-
-  //Prev button
-function prevPhoto(){
-    document.getElementById("placesImage"+SelectedPhoto).style.opacity=0;
-
-    if(SelectedPhoto===0){
-        SelectedPhoto = data.provinces[SelectedProvince].places[SelectedPlace].numberOfPhotos-1;
-    }else{
-        SelectedPhoto = SelectedPhoto - 1;
-    }
-    document.getElementById("placesImage"+SelectedPhoto).style.opacity=1;
-
-  }
-  //Next button
-  function nextPhoto(){
-    document.getElementById("placesImage"+SelectedPhoto).style.opacity=0;
-    if(SelectedPhoto===data.provinces[SelectedProvince].places[SelectedPlace].numberOfPhotos-1){
-        SelectedPhoto=0;
-    }else{
-        SelectedPhoto = SelectedPhoto + 1;
-    }
-    document.getElementById("placesImage"+SelectedPhoto).style.opacity=1;
-}

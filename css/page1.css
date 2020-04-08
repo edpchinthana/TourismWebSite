@@ -433,166 +433,62 @@ path:nth-child(10){
     transform: translate(20vw,0%);
   }
 }
-
-.backButton{
+.showProvinces-Container{
   position: absolute;
-  top: -50px;
-  right: 2.5vw;
-  z-index:2;
-  padding: 5px;
-  padding-left:15px;
-  padding-right:15px;
-  border: 2px solid black;
-  font-family: poppins;
-  border-radius: 10px;
-  background-color: black;
-  color:white;
-  transition: all 0.1s ease-in;
-}
-.backButton:hover{
-  border:0px;
-  color:black;
-  background-color: white;
-  font-size:20px;
-  box-shadow: 2px 2px 10px black;
-}
-
-@keyframes showProvince{
-  from{
-      opacity: 0;
-  }
-  to{
-      opacity: 1;
-  }
-}
-.showProvinces{
+  width: 85%;
+  height: 80vh;
   opacity: 0;
   pointer-events: none;
-  width: 100%;
-  transition: all 0.6 ease;
-  position:absolute;
-  z-index: -5;
-}
-.showProvinceDetails{
+  
   background-color: white;
   box-shadow: 2px 2px 10px black;
-  width:90%;
-  transform: translateX(5vw);
-  overflow-x: hidden;
-  transition: all 0.6 ease;
+  transition: all 0.3s ease-in-out;
 }
-.showProvinces-visible{
+.showProvinces-Container-Visible{
   opacity: 1 !important;
-  pointer-events: all !important;
-  z-index: 4!important;
-  top:0;
-  transition: all 0.6 ease;
+  pointer-events: all;
+  transform: translateX(7.5vw);
 }
-.placesHeading{
-  width: 100%;
-  transition: all 0.6 ease;
+.showProvinces-Heading{
+  display: flex;
 }
-.placesHeading button{
+.comboBox{
+  width: 60%;
+  padding: 5px;
+}
+.comboBox select{
+  width: 80%;
+  font-size: 20px;
+  font-family: poppins;
+  
+}
+.showProvinces-BackButton{
+  position: absolute;
+  right: 7px;
+  top: 7px;
+  background-color: black;
+  color:white;
   font-size: 15px;
-  font-family: poppins;
-  margin: 0;
-  border: 2px solid black;
-  border-radius: 4px;
-  padding: 6px;
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
-  position: absolute;
-  top:5px;
-  transition: all 0.6s ease;
+  padding:10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 5px;
+  border: 0px;
+  transition: all 0.4s ease;
 }
-.placesHeading Button:hover{
-  background-color: rgb(177, 177, 177)!important;
+.showProvinces-BackButton:hover{
+  background-color: white;
+  color: black;
+  box-shadow: 2px 2px 10px black;
+  font-size: 20px;
 }
-.mapButton{
-  right:5px;
-}
-.galleryButton{
-  right:80px;
-}
-.button-active{
-  background-color: black !important;
-  color:white !important;
-}
-.showProvinceDetails select{
-  font-size:20px;
-  font-family: poppins;
-  border-radius: 2px;
-  background-color: rgb(252, 245, 245);
-  padding: 2px;
-  width: 40%;
-  margin: 5px;
-  transition: all 0.6 ease;
-}
-.placeDescription{
-  position: static;
-  width:40%;
+.places-Container{
+  margin-top: 10px;
+  padding:10px;
   text-align: justify;
-  float: left;
-  padding:2vw;
   font-family: poppins;
-  background-color: yellow;
-}
-.placesImageMapContainer{
-  width:60%;
-  float: left;
-  padding: 2vw;
-}
-.placesImagesContainer{
-  position: relative;
-  overflow: hidden;
-  padding-top: 50%;
-  opacity:1;
-  pointer-events: all;
-  transition: all 0.6s ease;
-  text-align: center;
-
-}
-.placesImagesContainer-hidden{
-  position:absolute !important;
-  pointer-events: none !important;
-  opacity: 0 !important;
-  width: 0;
-}
-.placesImagesContainer img{
-  width: auto;
-  margin:auto;
-  display: block;
-  position: absolute;
-  top:0;
-  height:100%;
-  pointer-events: none;
-  transition:all 0.8s ease;
-
-}
-.placesNextButton{
-  position: absolute;
-  right: 0;
-  top: 0vh;
-}
-.placesPrevButton{
-  position: absolute;
-  right: 30px;
-  top: 0vh;
-}
-.placesMap{
-  position: relative;
-  overflow: hidden;
-  padding-top: 50%;
-  opacity:1;
-  pointer-events: all;
-  transition: all 0.6s ease;
-}
-.placesMap iframe{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  max-height:70vh;
+  overflow-y: scroll;
 }
 .about{
   display: block;
@@ -600,6 +496,7 @@ path:nth-child(10){
   padding:0.9309941520467835VW;
   padding-left: 5.847953216374268VW;
 }
+
 .about-heading{
   font-size:2rem;
   font-family: poppins;
