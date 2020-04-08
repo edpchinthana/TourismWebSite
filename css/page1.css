@@ -476,6 +476,7 @@ path:nth-child(10){
   border-radius: 5px;
   border: 0px;
   transition: all 0.4s ease;
+  z-index: 3;
 }
 .showProvinces-BackButton:hover{
   background-color: white;
@@ -490,7 +491,7 @@ path:nth-child(10){
   padding-right:15px;
   text-align: justify;
   font-family: poppins;
-  max-height:80vh;
+  max-height:90vh;
   overflow-y: scroll;
   overflow-x: hidden;
   transform: translateX(-10%);
@@ -579,6 +580,7 @@ path:nth-child(10){
   height: auto;
   opacity: 0;
   pointer-events: none;
+  text-align: center;
 }
 
 .places-image{
