@@ -490,7 +490,7 @@ path:nth-child(10){
   padding-right:15px;
   text-align: justify;
   font-family: poppins;
-  max-height:70vh;
+  max-height:80vh;
   overflow-y: scroll;
   overflow-x: hidden;
   transform: translateX(-10%);
@@ -504,15 +504,38 @@ path:nth-child(10){
   opacity: 1;
   pointer-events: inherit;
   position: relative;
-  
+}
+@media screen and (max-width:800px){
+  .showProvinces-Container{
+    width: 95%!important;
+    transform: translateX(2.5vw);
+    height: 80vh;
+  }
+  .places-Container{
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    max-height:70vh;
+  }
+  .places-ImageMapContainer{
+    -webkit-box-ordinal-group: 3;
+    -moz-box-ordinal-group: 3;
+    box-ordinal-group: 3;
+    
+    width: 100%!important;
+    height: 350px!important;
+  }
 }
 .places-ImageMapContainer{
   position: relative;
-  height: 70vh;
+  height: 310px;
   width: 60%;
   float: right;
   padding: 10px;
-
+  transition: all 0.5 ease;
 }
 .places-ImageMapContainer-active{
   opacity: 1!important;
@@ -560,10 +583,11 @@ path:nth-child(10){
 
 .places-image{
   width: auto;
-  height: 250px;
+  height: 300px;
   position: absolute;
   pointer-events: none;
   opacity: 0;
+  transition: all 0.5s ease;
 }
 .places-image-visible{
   position: relative!important;
@@ -577,7 +601,8 @@ path:nth-child(10){
   pointer-events: none;
   opacity: 0;
   width: 100%;
-  height: 250px;
+  height: 100%;
+  transition: all 0.5s ease;
 }
 .places-map-container iframe{
   position: inherit;
