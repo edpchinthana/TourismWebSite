@@ -138,7 +138,6 @@ request();
 var SelectedProvince = 0;
 var SelectedPlace = 0;
 var SelectedImage = 0;
-var SelectedMenu = 0;
 
 
 //Show province details
@@ -204,6 +203,18 @@ function showProvinces(k){
             }
             imageContainer.appendChild(image);
         }
+        
+
+        let prevButton = document.createElement("button");
+        prevButton.id="places-imagePrevButton";
+        prevButton.innerHTML = "&#10094;";
+        imageContainer.appendChild(prevButton);
+
+        let nextButton = document.createElement("button");
+        nextButton.id = "places-imageNextButton";
+        nextButton.innerHTML = "&#10095;";
+        imageContainer.appendChild(nextButton);
+
         imageMapContainer.appendChild(imageContainer);
 
         let weatherContainer = document.createElement("div");
@@ -227,7 +238,6 @@ function showProvinces(k){
     SelectedProvince = k;
     SelectedPlace = 0;
     SelectedImage = 0;
-    SelectedMenu = 0;
 }
 
 //Close province details
@@ -235,7 +245,8 @@ function closePlaces(){
     document.getElementById("showProvincesContainer").classList.remove("showProvinces-Container-Visible");
     document.getElementById("places-Container").innerHTML="";
     typeExplore('Explore');
-
+    SelectedPlace = 0;
+    SelectedImage = 0;
 }
 
 
@@ -249,15 +260,15 @@ function changePlace(){
 }
 
 function changeMenu(k){
-    if(SelectedMenu==0){
+    
         document.getElementById("place"+SelectedPlace+"-imageContainer").classList.remove("places-ImageMapContainer-active");
         document.getElementById("place"+SelectedPlace+"-galleryButton").classList.remove("placesButtons-active");
-    }else if(SelectedMenu==1){
+    
         document.getElementById("place"+SelectedPlace+"-weatherButton").classList.remove("placesButtons-active");
-    }else{
+    
         document.getElementById("place"+SelectedPlace+"-locationContainer").classList.remove("places-ImageMapContainer-active");
         document.getElementById("place"+SelectedPlace+"-locationButton").classList.remove("placesButtons-active");
-    }
+
     
     if(k==0){
         document.getElementById("place"+SelectedPlace+"-imageContainer").classList.add("places-ImageMapContainer-active");
@@ -268,7 +279,7 @@ function changeMenu(k){
         document.getElementById("place"+SelectedPlace+"-locationContainer").classList.add("places-ImageMapContainer-active");
         document.getElementById("place"+SelectedPlace+"-locationButton").classList.add("placesButtons-active");
     }
-    SelectedMenu = k;
+   
 }
 document.getElementById("placesComboBox").onchange = changePlace;
 

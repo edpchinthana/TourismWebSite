@@ -503,6 +503,7 @@ path:nth-child(10){
   transform: translateX(0%);
   opacity: 1;
   pointer-events: inherit;
+  position: relative;
   
 }
 .places-ImageMapContainer{
@@ -575,11 +576,11 @@ path:nth-child(10){
   left:0;
   pointer-events: none;
   opacity: 0;
-  width: 0%;
-  height: 0px;
+  width: 100%;
+  height: 250px;
 }
 .places-map-container iframe{
-  position: absolute;
+  position: inherit;
   top: 0;
   left: 0;
   width: 100%;
