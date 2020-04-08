@@ -1,6 +1,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden ;
+
 }
 *{
   box-sizing: border-box;
@@ -484,11 +485,24 @@ path:nth-child(10){
 }
 .places-Container{
   margin-top: 10px;
-  padding:10px;
+  padding-top: 5px;
+  padding-left:15px;
+  padding-right:15px;
   text-align: justify;
   font-family: poppins;
   max-height:70vh;
   overflow-y: scroll;
+  overflow-x: hidden;
+}
+.places-ImageMapContainer{
+  height: 50vh;
+  width: 60%;
+  float: right;
+  padding: 10px;
+}
+.places-ImageMapContainer img{
+  width: auto;
+  height: 100%;
 }
 .about{
   display: block;
