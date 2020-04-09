@@ -254,8 +254,8 @@ function closePlaces(){
 function changePlace(){
     let k = document.getElementById("placesComboBox").value;
     document.getElementById("place"+SelectedPlace+"-Container").classList.remove("places-Container-active");
-    document.getElementById("place"+k+"-Container").classList.add("places-Container-active");
-    console.log(k);
+   
+    setTimeout(() => {   document.getElementById("place"+k+"-Container").classList.add("places-Container-active"); }, 500);
     SelectedPlace = k;
 }
 
