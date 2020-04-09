@@ -191,8 +191,9 @@ function showProvinces(k){
 
         let imageContainer = document.createElement("div");
         imageContainer.classList.add("places-imageContainer");
+        imageContainer.classList.add("places-ImageMapContainer-active");
         imageContainer.id = "place"+x+"-imageContainer";
-
+        
         for(let y=0;y<data.provinces[k].places[x].numberOfPhotos;y++){
             let image = document.createElement("img");
             image.id = "place"+x+"-image"+y;
@@ -208,11 +209,13 @@ function showProvinces(k){
         let prevButton = document.createElement("button");
         prevButton.id="places-imagePrevButton";
         prevButton.innerHTML = "&#10094;";
+        prevButton.setAttribute('onclick','showPrevImage();');
         imageContainer.appendChild(prevButton);
 
         let nextButton = document.createElement("button");
         nextButton.id = "places-imageNextButton";
         nextButton.innerHTML = "&#10095;";
+        nextButton.setAttribute('onclick','showNextImage();');
         imageContainer.appendChild(nextButton);
 
         imageMapContainer.appendChild(imageContainer);
@@ -281,5 +284,40 @@ function changeMenu(k){
     }
    
 }
+
+function showNextImage(){
+    let images = document.getElementById("place"+SelectedPlace+"-imageContainer").children;
+    console.log(images);
+    for(let x=0;x<data.provinces[SelectedProvince].places[SelectedPlace].numberOfPhotos;x++){
+        if(images[x].classList.length==2){
+            console.log(x);
+            document.getElementById("place"+SelectedPlace+"-image"+x).classList.remove("places-image-visible");
+            if(x==(data.provinces[SelectedProvince].places[SelectedPlace].numberOfPhotos)-1){
+                document.getElementById("place"+SelectedPlace+"-image"+0).classList.add("places-image-visible");
+            }else{
+                document.getElementById("place"+SelectedPlace+"-image"+(x+1)).classList.add("places-image-visible");
+            }
+            break;
+        }
+    }
+}
+
+function showPrevImage(){
+    let images = document.getElementById("place"+SelectedPlace+"-imageContainer").children;
+    console.log(images);
+    for(let x=0;x<data.provinces[SelectedProvince].places[SelectedPlace].numberOfPhotos;x++){
+        if(images[x].classList.length==2){
+            console.log(x);
+            document.getElementById("place"+SelectedPlace+"-image"+x).classList.remove("places-image-visible");
+            if(x==0){
+                document.getElementById("place"+SelectedPlace+"-image"+(data.provinces[SelectedProvince].places[SelectedPlace].numberOfPhotos-1)).classList.add("places-image-visible");
+            }else{
+                document.getElementById("place"+SelectedPlace+"-image"+(x-1)).classList.add("places-image-visible");
+            }
+            break;
+        }
+    }
+}
+
 document.getElementById("placesComboBox").onchange = changePlace;
 
