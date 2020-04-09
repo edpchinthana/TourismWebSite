@@ -558,6 +558,10 @@ path:nth-child(10){
   transition: all 0.4s ease;
   z-index: 2;
 }
+.places-Buttons:hover{
+  background-color: rgb(97, 97, 97);
+  color: white;
+}
 .galleryButton{
   right:160px;
 }
@@ -590,12 +594,39 @@ path:nth-child(10){
   pointer-events: none;
   opacity: 0;
   transition: all 0.5s ease;
+  transform: translateX(10%);
 }
 .places-image-visible{
   position: relative!important;
   opacity: inherit!important;
+  transform: translateX(0%)!important;
 }
-
+.places-image-buttons{
+  position: absolute;
+  opacity: inherit;
+  pointer-events: inherit;
+  z-index: 3;
+  top:25px;
+  background-color: white;
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 2px;
+  box-shadow: 2px 2px 5px black;
+  transition: all 0.5s ease;
+}
+.places-image-buttons:hover{
+  background-color: black;
+  color:white;
+}
+.places-image-nextButton{
+  
+  right: 15px;
+}
+.places-image-prevButton{
+  
+  top:25px;
+  right: 40px;
+}
 .places-map-container{
   position: absolute;
   top:0;

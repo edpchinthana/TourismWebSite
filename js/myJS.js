@@ -209,12 +209,16 @@ function showProvinces(k){
         let prevButton = document.createElement("button");
         prevButton.id="places-imagePrevButton";
         prevButton.innerHTML = "&#10094;";
+        prevButton.classList.add("places-image-buttons");
+        prevButton.classList.add("places-image-prevButton");
         prevButton.setAttribute('onclick','showPrevImage();');
         imageContainer.appendChild(prevButton);
 
         let nextButton = document.createElement("button");
         nextButton.id = "places-imageNextButton";
         nextButton.innerHTML = "&#10095;";
+        nextButton.classList.add("places-image-buttons");
+        nextButton.classList.add("places-image-nextButton");
         nextButton.setAttribute('onclick','showNextImage();');
         imageContainer.appendChild(nextButton);
 
@@ -293,9 +297,9 @@ function showNextImage(){
             console.log(x);
             document.getElementById("place"+SelectedPlace+"-image"+x).classList.remove("places-image-visible");
             if(x==(data.provinces[SelectedProvince].places[SelectedPlace].numberOfPhotos)-1){
-                document.getElementById("place"+SelectedPlace+"-image"+0).classList.add("places-image-visible");
+                setTimeout(() => {   document.getElementById("place"+SelectedPlace+"-image"+0).classList.add("places-image-visible"); }, 500);
             }else{
-                document.getElementById("place"+SelectedPlace+"-image"+(x+1)).classList.add("places-image-visible");
+                setTimeout(() => {   document.getElementById("place"+SelectedPlace+"-image"+(x+1)).classList.add("places-image-visible"); }, 500);
             }
             break;
         }
@@ -310,9 +314,9 @@ function showPrevImage(){
             console.log(x);
             document.getElementById("place"+SelectedPlace+"-image"+x).classList.remove("places-image-visible");
             if(x==0){
-                document.getElementById("place"+SelectedPlace+"-image"+(data.provinces[SelectedProvince].places[SelectedPlace].numberOfPhotos-1)).classList.add("places-image-visible");
+                setTimeout(() => {   document.getElementById("place"+SelectedPlace+"-image"+(data.provinces[SelectedProvince].places[SelectedPlace].numberOfPhotos-1)).classList.add("places-image-visible"); }, 500);
             }else{
-                document.getElementById("place"+SelectedPlace+"-image"+(x-1)).classList.add("places-image-visible");
+                setTimeout(() => {   document.getElementById("place"+SelectedPlace+"-image"+(x-1)).classList.add("places-image-visible"); }, 500);
             }
             break;
         }
