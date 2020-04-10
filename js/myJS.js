@@ -118,50 +118,57 @@ function hideAboutDetails(){
     document.getElementById("aboutDetailsContainter").classList.remove("visible-aboutDetailsContainer");
     document.getElementById("aboutDetailsContainterParent").classList.remove("visible-aboutDetailsContainer");
 }
-//Importing weather
+//Selecting weather icon
+function weatherIcon(test){
+    let img;
+    switch(String(test)){
+        case "Thunderstorm":
+            img="11d.png";
+            break;
+        case "Drizzle":
+            img="09d.png";
+            break;
+        case "Rain":
+            img = "10d.png";
+            break;
+        case "Snow":
+            img = "13d.png";
+            break;
+        case "Atmosphere":
+            img = "50d.png";
+            break;
+        case "Clear":
+            img = "01d.png";
+            break;
+        case "Clouds":
+            img = "02d.png";
+            break;
+    }
+    return img;
+}
+
+//API - Importing weather
 function requestWeather(x){
     let request = new XMLHttpRequest();
-    //request.open("GET","http://api.openweathermap.org/data/2.5/forecast?q="+data.provinces[SelectedProvince].places[x].weather+"&cnt=4&units=metric&appid=fd2e1f6714e2061128504bacd101384a",true);
+    //request.open("GET","http://api.openweathermap.org/data/2.5/forecast?q="+data.provinces[SelectedProvince].places[x].weather+"&cnt=5&units=metric&appid=fd2e1f6714e2061128504bacd101384a",true);
     request.open("GET","testWeatherData.json",true);
     request.send();
     request.onload = () => {
         if(request.status===200){
             let weatherData = JSON.parse(request.response);
-            
+            console.log(weatherData);
             //Setting Date
             let days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
             let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
             let today  = new Date();
             let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
             let day = today.getDay();
-            console.log(days[day-1]);
             document.getElementById("place"+x+"-todayDate").innerHTML+=days[day-1]+",&nbsp&nbsp"+today.getDate()+"&nbsp&nbsp"+months[today.getMonth()]+"&nbsp&nbsp"+today.getFullYear();
 
             //Setting today weather icon
-            let img;
-            switch(String(weatherData.list[0].weather[0].main)){
-                case "Thunderstorm":
-                    img="11d.png";
-                    break;
-                case "Drizzle":
-                    img="09d.png";
-                    break;
-                case "Rain":
-                    img = "10d.png";
-                    break;
-                case "Snow":
-                    img = "13d.png";
-                    break;
-                case "Atmosphere":
-                    img = "50d.png";
-                    break;
-                case "Clear":
-                    img = "01d.png";
-                    break;
-                case "Clouds":
-                    img = "02d.png";
-                    break;
-            }
+            console.log(weatherData.list[0].weather[0].main);
+            let img = weatherIcon(weatherData.list[0].weather[0].main);
+            
             document.getElementById("place"+x+"-todayIcon").src = "res/weatherIcons/"+img;
 
             //Setting today's temperature
@@ -175,6 +182,37 @@ function requestWeather(x){
             document.getElementById("place"+x+"-todayDetails").innerHTML+="<br>Pressure &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp"+weatherData.list[0].main.pressure;
             document.getElementById("place"+x+"-todayDetails").innerHTML+="<br>Sea Level &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp"+weatherData.list[0].main.sea_level; 
             document.getElementById("place"+x+"-todayDetails").innerHTML+="<br>Ground Level&nbsp:&nbsp"+weatherData.list[0].main.grnd_level;   
+            //Setting forecast data
+            let firstDay = day;
+            let secondDay = day+1;
+            let thirdDay = day+2;
+            let fourthDay = day+3;
+            if(day+3==7){
+                fourthDay=0;
+            }else if(day+2==7){
+                fourthDay = 1;
+                thirdDay = 0;
+            }else if(day+1==7){
+                fourthDay = 2;
+                thirdDay = 1;
+                secondDay = 0;
+            }else if(day==7){
+                fourthDay = 3;
+                thirdDay = 2;
+                secondDay = 1;
+                firstDay = 0;
+            }
+            document.getElementById("place"+x+"-firstDayName").innerHTML=days[firstDay];
+            document.getElementById("place"+x+"-firstDayIcon").src = "res/weatherIcons/"+ weatherIcon(weatherData.list[1].weather[0].main);
+        
+            document.getElementById("place"+x+"-secondDayName").innerHTML=days[secondDay];
+            document.getElementById("place"+x+"-secondDayIcon").src = "res/weatherIcons/"+ weatherIcon(weatherData.list[2].weather[0].main);
+
+            document.getElementById("place"+x+"-thirdDayName").innerHTML=days[thirdDay];
+            document.getElementById("place"+x+"-thirdDayIcon").src = "res/weatherIcons/"+ weatherIcon(weatherData.list[3].weather[0].main);
+
+            document.getElementById("place"+x+"-fourthDayName").innerHTML=days[fourthDay];
+            document.getElementById("place"+x+"-fourthDayIcon").src = "res/weatherIcons/"+ weatherIcon(weatherData.list[4].weather[0].main);
         }else{
             console.log(`error ${request.status} ${request.statusText}`);
         }
@@ -330,8 +368,46 @@ function showProvinces(k){
         let firstDay = document.createElement("div");
         firstDay.id = "place"+x+"-firstDayDiv";
         firstDay.classList.add("future-days");
-        
+        let firstDayName = document.createElement("p");
+        firstDayName.id = "place"+x+"-firstDayName";
+        firstDay.appendChild(firstDayName);
+        let firstDayIcon = document.createElement("img");
+        firstDayIcon.id = "place"+x+"-firstDayIcon";
+        firstDay.appendChild(firstDayIcon);
+        futureDiv.appendChild(firstDay);
 
+        let secondDay = document.createElement("div");
+        secondDay.id = "place"+x+"-secondDayDiv";
+        secondDay.classList.add("future-days");
+        let secondDayName = document.createElement("p");
+        secondDayName.id = "place"+x+"-secondDayName";
+        secondDay.appendChild(secondDayName);
+        let secondDayIcon = document.createElement("img");
+        secondDayIcon.id = "place"+x+"-secondDayIcon";
+        secondDay.appendChild(secondDayIcon);
+        futureDiv.appendChild(secondDay);
+
+        let thirdDay = document.createElement("div");
+        thirdDay.id = "place"+x+"-thirdDayDiv";
+        thirdDay.classList.add("future-days");
+        let thirdDayName = document.createElement("p");
+        thirdDayName.id = "place"+x+"-thirdDayName";
+        thirdDay.appendChild(thirdDayName);
+        let thirdDayIcon = document.createElement("img");
+        thirdDayIcon.id = "place"+x+"-thirdDayIcon";
+        thirdDay.appendChild(thirdDayIcon);
+        futureDiv.appendChild(thirdDay);
+
+        let fourthDay = document.createElement("div");
+        fourthDay.id = "place"+x+"-fourthDayDiv";
+        fourthDay.classList.add("future-days");
+        let fourthDayName = document.createElement("p");
+        fourthDayName.id = "place"+x+"-fourthDayName";
+        fourthDay.appendChild(fourthDayName);
+        let fourthDayIcon = document.createElement("img");
+        fourthDayIcon.id = "place"+x+"-fourthDayIcon";
+        fourthDay.appendChild(fourthDayIcon);
+        futureDiv.appendChild(fourthDay);
 
         weatherContainer.appendChild(futureDiv);
 
