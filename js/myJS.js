@@ -118,11 +118,29 @@ function hideAboutDetails(){
     document.getElementById("aboutDetailsContainter").classList.remove("visible-aboutDetailsContainer");
     document.getElementById("aboutDetailsContainterParent").classList.remove("visible-aboutDetailsContainer");
 }
+//Importing weather
+function requestWeather(city){
+    let request = new XMLHttpRequest();
+    //request.open("GET","http://api.openweathermap.org/data/2.5/forecast?q="+city+"&cnt=4&units=metric&appid=fd2e1f6714e2061128504bacd101384a",true);
+    request.open("GET","testWeatherData.json",true);
+    request.send();
+    request.onload = () => {
+        if(request.status===200){
+            let weatherData = JSON.parse(request.response);
+            console.log("returning data");
+            console.log(weatherData);
+            return weatherData;
+        }else{
+            console.log(`error ${request.status} ${request.statusText}`);
+        }
+    }
+    
+}
 
 //load provinces pages
 var data=null;
 function request(){
-    var xhttp = new XMLHttpRequest();
+    let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
 
@@ -225,12 +243,28 @@ function showProvinces(k){
         imageMapContainer.appendChild(imageContainer);
 
         let weatherContainer = document.createElement("div");
+        //let weatherData = requestWeather(data.provinces[k].places[x].weather);
+        let todayDiv = document.createElement("div");
+        todayDiv.classList.add("today");
+        todayDiv.id= "place"+x+"-today";
+
+        let todayLocation = document.createElement("p");
+        todayLocation.classList.add("today-details");
+        todayLocation.innerHTML+="Location : ";
+
+        let todayDay = document.createElement("p");
+        todayDay.classList.add("today-details");
+        todayDay.innerHTML+="";
+        
+
+
 
         let locationContainer = document.createElement("div");
         locationContainer.id = "place"+x+"-locationContainer";
         locationContainer.classList.add("places-map-container");
         locationContainer.innerHTML = data.provinces[k].places[x].map;
         imageMapContainer.appendChild(locationContainer);
+
 
         let description = data.provinces[k].places[x].description;
         parentDiv.innerHTML+=description;
