@@ -192,7 +192,7 @@ html {
   }
   .slide{
     display: absolute;
-      max-height: 650px;
+      max-height: 800px;
       width: 100%;
       filter:brightness(50%);
   }
@@ -449,6 +449,9 @@ path:nth-child(10){
   opacity: 1 !important;
   pointer-events: all;
   transform: translateX(7.5vw);
+  position: fixed;
+  top:90px;
+  z-index: 99;
 }
 .showProvinces-Heading{
   display: flex;
@@ -507,7 +510,7 @@ path:nth-child(10){
   pointer-events: inherit;
   position: relative;
 }
-@media screen and (max-width:1000px){
+@media screen and (max-width:1100px){
   .showProvinces-Container{
     width: 95%!important;
     transform: translateX(2.5vw);
@@ -529,6 +532,61 @@ path:nth-child(10){
     width: 80%!important;
     transform: translateX(7.5vw);
     height: 350px!important;
+  }
+}
+@media screen and (max-width:1100px){
+  .places-ImageMapContainer{
+    -webkit-box-ordinal-group: 3;
+    -moz-box-ordinal-group: 3;
+    box-ordinal-group: 3;
+    width: 80%!important;
+    transform: translateX(7.5vw);
+    height: 500px!important;
+  }
+  .today{
+    width: 100%!important;
+  }
+ 
+  .today img{
+    position: absolute;
+    width: 300px!important;
+    left: 5px;
+    top: 30px;
+  }
+  .today-temp{
+    font-family: sans-serif ;
+    float: right;
+    font-size:3.5rem!important;
+    font-weight: bolder;
+    padding-right: 40px!important;
+    padding-top: 30px!important;
+    text-align: right;
+    width: 100%;
+    line-height: 20px;
+  }
+  .today-temp p{
+    font-size: 1.75rem!important;
+    line-height: 10px;
+    text-align: right;
+  }
+  .today-details{
+ 
+    padding-left: 20px;
+    float: right!important;
+    width: 100%!important;
+
+  }
+  .future{
+    width: 100%!important;
+    background-color: rgb(37, 84, 185);
+  }
+  .future-days{
+    width: 20%!important;
+    transform: translateX(2.5vw);
+  }
+  .future-days img{
+    top: 6vh!important;
+    left:30px!important;
   }
 }
 .places-ImageMapContainer{
