@@ -119,17 +119,62 @@ function hideAboutDetails(){
     document.getElementById("aboutDetailsContainterParent").classList.remove("visible-aboutDetailsContainer");
 }
 //Importing weather
-function requestWeather(city){
+function requestWeather(x){
     let request = new XMLHttpRequest();
-    //request.open("GET","http://api.openweathermap.org/data/2.5/forecast?q="+city+"&cnt=4&units=metric&appid=fd2e1f6714e2061128504bacd101384a",true);
+    //request.open("GET","http://api.openweathermap.org/data/2.5/forecast?q="+data.provinces[SelectedProvince].places[x].weather+"&cnt=4&units=metric&appid=fd2e1f6714e2061128504bacd101384a",true);
     request.open("GET","testWeatherData.json",true);
     request.send();
     request.onload = () => {
         if(request.status===200){
             let weatherData = JSON.parse(request.response);
-            console.log("returning data");
-            console.log(weatherData);
-            return weatherData;
+            
+            //Setting Date
+            let days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+            let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+            let today  = new Date();
+            let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+            let day = today.getDay();
+            console.log(days[day-1]);
+            document.getElementById("place"+x+"-todayDate").innerHTML+=days[day-1]+",&nbsp&nbsp"+today.getDate()+"&nbsp&nbsp"+months[today.getMonth()]+"&nbsp&nbsp"+today.getFullYear();
+
+            //Setting today weather icon
+            let img;
+            switch(String(weatherData.list[0].weather[0].main)){
+                case "Thunderstorm":
+                    img="11d.png";
+                    break;
+                case "Drizzle":
+                    img="09d.png";
+                    break;
+                case "Rain":
+                    img = "10d.png";
+                    break;
+                case "Snow":
+                    img = "13d.png";
+                    break;
+                case "Atmosphere":
+                    img = "50d.png";
+                    break;
+                case "Clear":
+                    img = "01d.png";
+                    break;
+                case "Clouds":
+                    img = "02d.png";
+                    break;
+            }
+            document.getElementById("place"+x+"-todayIcon").src = "res/weatherIcons/"+img;
+
+            //Setting today's temperature
+            document.getElementById("place"+x+"-todayTemp").innerHTML=weatherData.list[0].main.temp+" &#8451;";
+            document.getElementById("place"+x+"-todayTemp").innerHTML+="<p>Max : "+weatherData.list[0].main.temp_max+"&#8451;</p>";
+            document.getElementById("place"+x+"-todayTemp").innerHTML+="<p>Min : "+weatherData.list[0].main.temp_min+"&#8451;<br></p>";
+            //Setting today's details
+            
+            document.getElementById("place"+x+"-todayDetails").innerHTML+=weatherData.list[0].weather[0].main+" - "+weatherData.list[0].weather[0].description;
+            document.getElementById("place"+x+"-todayDetails").innerHTML+="<br>Humidity &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp"+weatherData.list[0].main.humidity;
+            document.getElementById("place"+x+"-todayDetails").innerHTML+="<br>Pressure &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp"+weatherData.list[0].main.pressure;
+            document.getElementById("place"+x+"-todayDetails").innerHTML+="<br>Sea Level &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp"+weatherData.list[0].main.sea_level; 
+            document.getElementById("place"+x+"-todayDetails").innerHTML+="<br>Ground Level&nbsp:&nbsp"+weatherData.list[0].main.grnd_level;   
         }else{
             console.log(`error ${request.status} ${request.statusText}`);
         }
@@ -160,7 +205,9 @@ var SelectedImage = 0;
 
 //Show province details
 function showProvinces(k){
+
     document.getElementById("showProvincesContainer").classList.add("showProvinces-Container-Visible");
+    document.getElementById("places-Container").innerHTML="";
     let i, L = document.getElementById("placesComboBox").options.length - 1;
    for(i = L; i >= 0; i--) {
     document.getElementById("placesComboBox").remove(i);
@@ -243,21 +290,54 @@ function showProvinces(k){
         imageMapContainer.appendChild(imageContainer);
 
         let weatherContainer = document.createElement("div");
+        weatherContainer.classList.add("places-weather-container");
+        weatherContainer.id = "place"+x+"-weatherContainer";
         //let weatherData = requestWeather(data.provinces[k].places[x].weather);
         let todayDiv = document.createElement("div");
         todayDiv.classList.add("today");
         todayDiv.id= "place"+x+"-today";
 
-        let todayLocation = document.createElement("p");
-        todayLocation.classList.add("today-details");
-        todayLocation.innerHTML+="Location : ";
+        let todayDate = document.createElement("p");
+        todayDate.id = "place"+x+"-todayDate";
+        todayDate.classList.add("today-details");
+        todayDiv.appendChild(todayDate);
 
         let todayDay = document.createElement("p");
         todayDay.classList.add("today-details");
         todayDay.innerHTML+="";
+        todayDiv.appendChild(todayDay);
+
+        let todayIcon = document.createElement("img");
+        todayIcon.id = "place"+x+"-todayIcon";
+        todayDiv.appendChild(todayIcon);
+
+        let todayTemp = document.createElement("div");
+        todayTemp.id = "place"+x+"-todayTemp";
+        todayTemp.classList.add("today-temp");
+        todayDiv.appendChild(todayTemp);
+
+        let todayDetails = document.createElement("div");
+        todayDetails.id = "place"+x+"-todayDetails";
+        todayDetails.classList.add("today-details");
+        todayDiv.appendChild(todayDetails);
+
+        weatherContainer.appendChild(todayDiv);
+
+        let futureDiv = document.createElement("div");
+        futureDiv.classList.add("future");
+        futureDiv.id= "place"+x+"-future";
+        
+        let firstDay = document.createElement("div");
+        firstDay.id = "place"+x+"-firstDayDiv";
+        firstDay.classList.add("future-days");
         
 
 
+        weatherContainer.appendChild(futureDiv);
+
+
+        imageMapContainer.appendChild(weatherContainer);
+        
 
         let locationContainer = document.createElement("div");
         locationContainer.id = "place"+x+"-locationContainer";
@@ -275,10 +355,12 @@ function showProvinces(k){
             parentDiv.classList.add("places-Container-active");
             document.getElementById("place0-imageContainer").classList.add("places-ImageMapContainer-active");
         }
+        requestWeather(x);
     }
     SelectedProvince = k;
     SelectedPlace = 0;
     SelectedImage = 0;
+    
 }
 
 //Close province details
@@ -306,7 +388,8 @@ function changeMenu(k){
         document.getElementById("place"+SelectedPlace+"-galleryButton").classList.remove("placesButtons-active");
     
         document.getElementById("place"+SelectedPlace+"-weatherButton").classList.remove("placesButtons-active");
-    
+        document.getElementById("place"+SelectedPlace+"-weatherContainer").classList.remove("places-ImageMapContainer-active");
+
         document.getElementById("place"+SelectedPlace+"-locationContainer").classList.remove("places-ImageMapContainer-active");
         document.getElementById("place"+SelectedPlace+"-locationButton").classList.remove("placesButtons-active");
 
@@ -316,6 +399,7 @@ function changeMenu(k){
         document.getElementById("place"+SelectedPlace+"-galleryButton").classList.add("placesButtons-active");
     }else if(k==1){
         document.getElementById("place"+SelectedPlace+"-weatherButton").classList.add("placesButtons-active");
+        document.getElementById("place"+SelectedPlace+"-weatherContainer").classList.add("places-ImageMapContainer-active");
     }else{
         document.getElementById("place"+SelectedPlace+"-locationContainer").classList.add("places-ImageMapContainer-active");
         document.getElementById("place"+SelectedPlace+"-locationButton").classList.add("placesButtons-active");
@@ -331,9 +415,9 @@ function showNextImage(){
             console.log(x);
             document.getElementById("place"+SelectedPlace+"-image"+x).classList.remove("places-image-visible");
             if(x==(data.provinces[SelectedProvince].places[SelectedPlace].numberOfPhotos)-1){
-                setTimeout(() => {   document.getElementById("place"+SelectedPlace+"-image"+0).classList.add("places-image-visible"); }, 500);
+                setTimeout(() => {   document.getElementById("place"+SelectedPlace+"-image"+0).classList.add("places-image-visible"); }, 400);
             }else{
-                setTimeout(() => {   document.getElementById("place"+SelectedPlace+"-image"+(x+1)).classList.add("places-image-visible"); }, 500);
+                setTimeout(() => {   document.getElementById("place"+SelectedPlace+"-image"+(x+1)).classList.add("places-image-visible"); }, 400);
             }
             break;
         }
@@ -348,9 +432,9 @@ function showPrevImage(){
             console.log(x);
             document.getElementById("place"+SelectedPlace+"-image"+x).classList.remove("places-image-visible");
             if(x==0){
-                setTimeout(() => {   document.getElementById("place"+SelectedPlace+"-image"+(data.provinces[SelectedProvince].places[SelectedPlace].numberOfPhotos-1)).classList.add("places-image-visible"); }, 500);
+                setTimeout(() => {   document.getElementById("place"+SelectedPlace+"-image"+(data.provinces[SelectedProvince].places[SelectedPlace].numberOfPhotos-1)).classList.add("places-image-visible"); }, 400);
             }else{
-                setTimeout(() => {   document.getElementById("place"+SelectedPlace+"-image"+(x-1)).classList.add("places-image-visible"); }, 500);
+                setTimeout(() => {   document.getElementById("place"+SelectedPlace+"-image"+(x-1)).classList.add("places-image-visible"); }, 400);
             }
             break;
         }
