@@ -677,7 +677,35 @@ path:nth-child(10){
 
 .future{
   height: 100%;
-  width: 100%;
+  width: 50%;
+  float: left;
+  padding-top: 30px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.future-days{
+  width: 40%;
+  float: left;
+  height: 100px;
+  margin:5px;
+  margin-left: 10px;
+  padding-bottom: 120px;
+  position: relative;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 20px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.226);
+  box-shadow: 2px 2px 10px rgb(37, 84, 185);
+  border-radius: 3px;
+}
+.future-days p2{
+  font-size: 1rem;
+}
+.future-days img{
+  position: absolute;
+  top: 40px;
+  left:10px;
 }
 
 .places-map-container{
@@ -792,8 +820,6 @@ path:nth-child(10){
   height: 90vh;
   
 }
-
-
 .about-details object{
   transform: translateX(7.5vw);
   width:85%;

@@ -202,16 +202,16 @@ function requestWeather(x){
                 secondDay = 1;
                 firstDay = 0;
             }
-            document.getElementById("place"+x+"-firstDayName").innerHTML=days[firstDay];
+            document.getElementById("place"+x+"-firstDayName").innerHTML=days[firstDay]+"<br><p2>"+weatherData.list[1].main.temp+"&#8451;<p2>";
             document.getElementById("place"+x+"-firstDayIcon").src = "res/weatherIcons/"+ weatherIcon(weatherData.list[1].weather[0].main);
         
-            document.getElementById("place"+x+"-secondDayName").innerHTML=days[secondDay];
+            document.getElementById("place"+x+"-secondDayName").innerHTML=days[secondDay]+"<br><p2>"+weatherData.list[2].main.temp+"&#8451;<p2>";
             document.getElementById("place"+x+"-secondDayIcon").src = "res/weatherIcons/"+ weatherIcon(weatherData.list[2].weather[0].main);
 
-            document.getElementById("place"+x+"-thirdDayName").innerHTML=days[thirdDay];
+            document.getElementById("place"+x+"-thirdDayName").innerHTML=days[thirdDay]+"<br><p2>"+weatherData.list[3].main.temp+"&#8451;<p2>";
             document.getElementById("place"+x+"-thirdDayIcon").src = "res/weatherIcons/"+ weatherIcon(weatherData.list[3].weather[0].main);
 
-            document.getElementById("place"+x+"-fourthDayName").innerHTML=days[fourthDay];
+            document.getElementById("place"+x+"-fourthDayName").innerHTML=days[fourthDay]+"<br><p2>"+weatherData.list[4].main.temp+"&#8451;<p2>";
             document.getElementById("place"+x+"-fourthDayIcon").src = "res/weatherIcons/"+ weatherIcon(weatherData.list[4].weather[0].main);
         }else{
             console.log(`error ${request.status} ${request.statusText}`);
