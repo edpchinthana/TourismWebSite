@@ -54,7 +54,7 @@ const navSlide=()=>{
                 link.style.animation = '';
             }else{
                 console.log(index);
-                link.style.animation = 'navLinkFade 1s ease '+(index/7)+'s';
+                link.style.animation = 'navLinkFade 1s ease '+(index/10)+'s';
             }
         });
         burger.classList.toggle('toggle');
