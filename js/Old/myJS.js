@@ -81,10 +81,7 @@ function scrollWindow(k){
 
 
 //Typing effect
-
-
 //printing the heading
-
 function typeExplore(k){
     const text = k;
     count = 0;
@@ -100,7 +97,6 @@ function typeExplore(k){
         }
     }());
 }
-
 function typeAboutSriLanka(){
     const text = "About Sri Lanka";
     count = 0;
@@ -116,7 +112,6 @@ function typeAboutSriLanka(){
         }
     }());
 }
-
 //load about pages
 function loadPages(n) {
     let page;
@@ -150,7 +145,6 @@ function loadPages(n) {
     document.getElementById("aboutDetailsContainterParent").classList.add("visible-aboutDetailsContainer");
     document.getElementById("aboutDetailsContainter").innerHTML='<object type="text/html" data="'+page+'" ></object>';
 }
-
 function hideAboutDetails(){
     document.getElementById("aboutDetailsContainter").classList.remove("visible-aboutDetailsContainer");
     document.getElementById("aboutDetailsContainterParent").classList.remove("visible-aboutDetailsContainer");
@@ -183,7 +177,6 @@ function weatherIcon(test){
     }
     return img;
 }
-
 //API - Importing weather
 function requestWeather(k,x){
     let weatherData=null;
