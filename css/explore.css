@@ -318,10 +318,11 @@ from{
     width: 100%;
     line-height: 20px;
     padding-top: 0.6rem;
-}/*
+    text-align: right;
+}
 .today-temp p{
-
-}*/
+    text-align: right;
+}
 .today-details{
     padding-left: 20px;
     margin-top:1.8rem;
@@ -481,7 +482,6 @@ from{
     .today-temp{
         width: 60%;
         font-size:8vw!important;
-        text-align: right;
         float: left;
     }
     .today-temp p{
