@@ -5,10 +5,8 @@ body{
     position: relative;
     overflow-x: hidden;
     overflow-y: scroll;
-
 }
   /*SlideShow*/
-
   .slideShow{ 
     display: block;
     position: absolute;
@@ -24,7 +22,6 @@ body{
     transform: translateX(10vw);
     z-index: 3;
 }
-
 .hideSlides{
     display: none;
 }
@@ -35,7 +32,6 @@ body{
     width: 100%;
     filter:brightness(100%);
 }
-
   .prev, .next {
     cursor: pointer;
     position:absolute;
@@ -51,7 +47,6 @@ body{
     user-select: none;
     background-color: rgba(0, 0, 0, 0.671);
   }
-
 .next {
     right: 0em;
     border-radius: 3px 0 0 3px;
@@ -59,19 +54,16 @@ body{
   .prev:hover, .next:hover {
     background-color: rgba(0,0,0,0.8);
   }
-
 .fade {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 0.5s;
     animation-name: fade;
     animation-duration: 0.5s;
   }
-  
   @-webkit-keyframes fade {
     from {opacity: .6}
     to {opacity: 1}
   }
-  
   @keyframes fade {
     from {opacity: .6}
     to {opacity: 1}
@@ -104,54 +96,6 @@ body{
       margin: 0px;
       line-height: 40px;
   }
-  @media screen and (max-width: 1400px) {
-    .prev, .next{
-      font-size: 10px;
-      padding:10px;
-      top:20vh
-    }
-  @media screen and (max-width: 1000px) {
-    .content{
-      width:80%;
-      display: block;
-      position: static;
-      padding: 10px;
-      color:black;
-      transform: translateX(7.5vw);
-      background-color: rgb(255, 255, 255);
-      font-size: 2.5vw;
-      line-height:3vw;
-    }
-    .photos{
-      width:100%;
-      display: block;
-      padding-top: 6vw;
-    }
-    .slideShow{
-      width: 80%;
-    }
-    .content h1{
-      font-size: 4vw;
-    }
-  }
-  @media screen and (max-width: 700px) {
-    .content{
-      font-size: 3.5vw;
-      line-height:3.5vw;
-    }
-    .photos{
-      padding-top: 6.8vw;
-    }
-    .content h1{
-      font-size: 4.5vw;
-    }
-    .prev, .next{
-      font-size: 10px;
-      padding:10px;
-      top:20vh
-    }
-  }
-
   /*hiding scroll bar*/
 ::-webkit-scrollbar {
   display: none;
@@ -159,4 +103,56 @@ body{
 body {
   -ms-overflow-style: none;
 }
-
+/*Mobile View*/
+@media screen and (max-width: 1400px) {
+  .prev, .next{
+    font-size: 10px;
+    padding:10px;
+    top:20vh
+  }
+@media screen and (max-width: 900px) {
+  .content{
+    width:80%;
+    display: block;
+    position: static;
+    padding: 10px;
+    color:black;
+    transform: translateX(7.5vw);
+    background-color: rgb(255, 255, 255);
+    font-size: 2.5vw;
+    line-height:3vw;
+  }
+  .photos{
+    width:100%;
+    display: block;
+    padding-top: 6vw;
+  }
+  .slideShow{
+    width: 80%;
+  }
+  .prev, .next{
+    font-size: 20px!important;
+    padding:20px!important;
+    top:20vh
+  }
+  .content h1{
+    font-size: 4vw;
+  }
+}
+@media screen and (max-width: 700px) {
+  .content{
+    font-size: 3.5vw;
+    line-height:3.5vw;
+  }
+  .photos{
+    padding-top: 6.8vw;
+  }
+  .content h1{
+    font-size: 4.5vw;
+  }
+  .prev, .next{
+    font-size: 10px;
+    padding:10px;
+    top:20vh
+  }
+}
