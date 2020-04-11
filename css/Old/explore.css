@@ -370,7 +370,7 @@ from{
 }
 .future-days img{
     position: absolute;
-    top: 4vh;
+    top: 40px;
     left:10px;
     width: 8vw;
 }
@@ -417,9 +417,6 @@ from{
   }
 }
 /*Mobile View*/
-@media screen and (max-width:2000){
-
-}
 @media screen and (max-width:1400px){
     .map-container svg{
         width: 70%;
@@ -533,9 +530,9 @@ from{
     }
     .future-days img{
         position: absolute;
-        top: 4vh;
+        top: 38px;
         left:10px;
-        width: 8vw;
+        width: 7.8vw;
     }
 }
 @media screen and (max-width: 1000px) {
@@ -548,6 +545,12 @@ from{
     .map-container svg{
         width: 50%;
         transform:translateX(25vw);
+    }
+    .future-days img{
+        position: absolute;
+        top: 45px;
+        left:18px;
+        width: 7.8vw;
     }
 }
 @media screen and (max-width:950px){
@@ -609,7 +612,7 @@ from{
         transform: translate(-10px,15px);
     }
     .future-days img{
-        transform: translateX(1.5vw,20px)!important;
+        transform: translateX(20px,20px)!important;
     }
 }
 @media screen and (max-width: 500px) {
