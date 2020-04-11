@@ -175,10 +175,10 @@ function requestWeather(x){
             //Setting today's temperature
             document.getElementById("place"+x+"-todayTemp").innerHTML=weatherData.list[0].main.temp+" &#8451;";
             document.getElementById("place"+x+"-todayTemp").innerHTML+="<p>Max : "+weatherData.list[0].main.temp_max+"&#8451;</p>";
-            document.getElementById("place"+x+"-todayTemp").innerHTML+="<p>Min : "+weatherData.list[0].main.temp_min+"&#8451;<br></p>";
+            document.getElementById("place"+x+"-todayTemp").innerHTML+="<p>Min : "+weatherData.list[0].main.temp_min+"&#8451;</p>";
             //Setting today's details
             
-            document.getElementById("place"+x+"-todayDetails").innerHTML+=weatherData.list[0].weather[0].main+" - "+weatherData.list[0].weather[0].description;
+            document.getElementById("place"+x+"-todayDetails").innerHTML+=weatherData.list[0].weather[0].main+"<br>"+weatherData.list[0].weather[0].description;
             document.getElementById("place"+x+"-todayDetails").innerHTML+="<br>Humidity &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp"+weatherData.list[0].main.humidity;
             document.getElementById("place"+x+"-todayDetails").innerHTML+="<br>Pressure &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp"+weatherData.list[0].main.pressure;
             document.getElementById("place"+x+"-todayDetails").innerHTML+="<br>Sea Level &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp"+weatherData.list[0].main.sea_level; 
@@ -341,11 +341,6 @@ function showProvinces(k){
         todayDate.classList.add("today-details");
         todayDiv.appendChild(todayDate);
 
-        let todayDay = document.createElement("p");
-        todayDay.classList.add("today-details");
-        todayDay.innerHTML+="";
-        todayDiv.appendChild(todayDay);
-
         let todayIcon = document.createElement("img");
         todayIcon.id = "place"+x+"-todayIcon";
         todayDiv.appendChild(todayIcon);
@@ -357,7 +352,7 @@ function showProvinces(k){
 
         let todayDetails = document.createElement("div");
         todayDetails.id = "place"+x+"-todayDetails";
-        todayDetails.classList.add("today-details");
+        todayDetails.classList.add("today-details-div");
         todayDiv.appendChild(todayDetails);
 
         weatherContainer.appendChild(todayDiv);

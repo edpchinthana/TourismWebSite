@@ -108,7 +108,7 @@ body {
   .prev, .next{
     font-size: 10px;
     padding:10px;
-    top:20vh
+    top:50%;
   }
 @media screen and (max-width: 900px) {
   .content{
@@ -133,7 +133,7 @@ body {
   .prev, .next{
     font-size: 20px!important;
     padding:20px!important;
-    top:20vh
+    top:50%;
   }
   .content h1{
     font-size: 4vw;
@@ -151,8 +151,8 @@ body {
     font-size: 4.5vw;
   }
   .prev, .next{
-    font-size: 10px;
-    padding:10px;
-    top:20vh
+    font-size: 12px!important;
+    padding:7px!important;
+    top:50%!important;
   }
 }

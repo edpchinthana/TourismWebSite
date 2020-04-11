@@ -247,28 +247,7 @@ html {
 ::-webkit-scrollbar-thumb:hover {
     background: rgb(153, 153, 153); 
 }
-/*Grid View*/
-.row:after{
-    content: "";
-    display: table;
-    clear:both;
-}
-.column{
-    float: left;
-    width:40%;
-}
-.column2{
-  width:50%;
-}
-@media screen and (max-width: 1000px) {
-  .row{
-      width:100%;
-  }
-  .column {
-    width: 80%;
-    align-items: center;
-  }
-}
+
 /*Mobile View*/
 @media screen and (max-width:1000px){
   body{
@@ -302,9 +281,11 @@ html {
     transform:translateX(100%);
     transition: transform 0.3s ease-in;
     opacity: 0;
+    z-index: 11;
   }
   .navBar li{
     opacity: inherit;
+    font-size: 30px;
   }
   .burger{
     display:block;
@@ -336,5 +317,11 @@ html {
   /*Hide welcome image on mobile view*/
   .srilanka-description img{
     display: none;
+  }
+}
+@media screen and (max-width:500px){
+  .navBar li{
+    opacity: inherit;
+    font-size: 6vw;
   }
 }
