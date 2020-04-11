@@ -1,36 +1,5 @@
 
 
-//selecting province
-function selectProvince(n){
-    var path = document.getElementById("pathId"+n);
-    displayDetails(n);
-}
-let prevContainer=0;
-//Display province details
-function displayDetails(n){
-    if(prevContainer===0){
-
-    }else{
-            var element = document.getElementById('explore');
-            var location = element.offsetTop-50;
-            window.scrollTo(0,location)
-        document.getElementById("container"+prevContainer).style.display="none";
-    }
-    document.getElementById("containerDiv").style.transform="translateX(0px)";
-        document.getElementById("containerDiv").style.opacity="1";
-        document.getElementById("container"+n).style.display="block";
-        document.getElementById("container"+n).style.transform="translateX(0px)"
-        document.getElementById("container"+n).style.animation="showDetails 1s ease-in-out";
-    prevContainer=n;
-}
-
-function hideContent(){
-    document.getElementById("containerDiv").style.transform="translateX(100%)";
-    document.getElementById("containerDiv").style.opacity="0";
-}
-
-
-
 //printing the heading
 
 function typeExplore(k){

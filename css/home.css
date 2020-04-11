@@ -220,15 +220,14 @@ html {
       filter: brightness(70%);
     }
     .clipart{
-      width: 100%;
-      max-height: 180px;
+      width: auto;
+      max-height: 100px;
       margin:0px;
       background-color: rgb(255, 255, 255);
     }
     footer{
       margin:0px;
-      padding-bottom:10px;
-      background-color: rgb(255, 181, 112);
+      background-image: linear-gradient(to bottom,rgb(255, 255, 255) 50%,rgb(138, 200, 241)100%);
       color: black;
       text-align: center;
     }
