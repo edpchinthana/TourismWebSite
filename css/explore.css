@@ -437,12 +437,7 @@ from{
         transform:translateX(25vw);
     }
 }
-@media screen and (max-width: 500px) {
-    .map-container svg{
-        width: 60%;
-        height: auto;
-      transform: translateX(20vw)!important;
-    }
+@media screen and (max-width:800px){
     .comboBox{
         width:100%
     }
@@ -452,6 +447,49 @@ from{
     }
     .places-ImageMapContainer{
         width: 100%!important;
+    }
+    .today{
+        width: 50%;
+    }
+    .today-temp{
+        font-size: 5vw;
+    }
+    .today-temp p{
+        font-size: 3vw;
+    }
+    .today img{
+        width: 25vw;
+        transform: translate(-10px,20px);
+    }
+    .today-details-div{
+        padding-top: 10px!important;
+        width: 100%;
+        font-size: 15px;
+        padding-left: 5vw;
+        line-height: 20px;
+    }
+    .future{
+        width: 50%;
+        padding-left: 10px;
+    }
+    .future-days{
+        margin-left: 10px;
+    }
+    .future-days p{
+        font-size: 15px;
+    }
+    .future-days img{
+        width: 65%;
+        transform: translate(1.5vw,10px);
+    }
+}
+@media screen and (max-width: 500px) {
+    .map-container svg{
+        width: 60%;
+        height: auto;
+      transform: translateX(20vw)!important;
+    }
+    .places-ImageMapContainer{
         transform: translateX(0vw);
         height: 250px!important;
     }
@@ -475,7 +513,7 @@ from{
         height: 150px;
     }
     .today img{
-        width: 30vw;
+        width: 28vw;
         transform: translate(-3vw,55px)!important;
         
     }
@@ -498,6 +536,7 @@ from{
         float: left;
         padding-left: 15px;
         padding-right: 5px;
+        line-height: 16px;
     }
     .future{
         width: 100%;
@@ -524,6 +563,6 @@ from{
         width: 70%;
         left: 15%;
         top: 10px;
-
+        transform: translate(0,0);
     }
 }
