@@ -3,8 +3,6 @@ var index = 1;
 hideAll();
 previewSlides(index);
 
-
-
 function nextSlide(n){
     previewSlides(index+=n);
 }
