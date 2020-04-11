@@ -149,15 +149,16 @@ function weatherIcon(test){
 }
 
 //API - Importing weather
-function requestWeather(x){
-    let request = new XMLHttpRequest();
-    //request.open("GET","http://api.openweathermap.org/data/2.5/forecast?q="+data.provinces[SelectedProvince].places[x].weather+"&cnt=5&units=metric&appid=fd2e1f6714e2061128504bacd101384a",true);
+function requestWeather(k,x){
+    let weatherData=null;
+    let request = null;
+    request = new XMLHttpRequest();
+    //request.open("GET","http://api.openweathermap.org/data/2.5/forecast?q="+data.provinces[k].places[x].weather+"&cnt=5&units=metric&appid=fd2e1f6714e2061128504bacd101384a",true);
     request.open("GET","testWeatherData.json",true);
     request.send();
     request.onload = () => {
         if(request.status===200){
-            let weatherData = JSON.parse(request.response);
-            console.log(weatherData);
+            weatherData = JSON.parse(request.response);
             //Setting Date
             let days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
             let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
@@ -167,7 +168,6 @@ function requestWeather(x){
             document.getElementById("place"+x+"-todayDate").innerHTML+=days[day-1]+",&nbsp&nbsp"+today.getDate()+"&nbsp&nbsp"+months[today.getMonth()]+"&nbsp&nbsp"+today.getFullYear();
 
             //Setting today weather icon
-            console.log(weatherData.list[0].weather[0].main);
             let img = weatherIcon(weatherData.list[0].weather[0].main);
             
             document.getElementById("place"+x+"-todayIcon").src = "res/weatherIcons/"+img;
@@ -216,6 +216,7 @@ function requestWeather(x){
             document.getElementById("place"+x+"-fourthDayIcon").src = "res/weatherIcons/"+ weatherIcon(weatherData.list[4].weather[0].main);
         }else{
             console.log(`error ${request.status} ${request.statusText}`);
+            document.getElementById("place"+x+"-todayDate").innerHTML+="Error&nbsp&nbsp&nbsp&nbsp&nbsp"+request.status;
         }
     }
     
@@ -427,7 +428,7 @@ function showProvinces(k){
             parentDiv.classList.add("places-Container-active");
             document.getElementById("place0-imageContainer").classList.add("places-ImageMapContainer-active");
         }
-        requestWeather(x);
+        requestWeather(k,x);
     }
     SelectedProvince = k;
     SelectedPlace = 0;
@@ -442,6 +443,7 @@ function closePlaces(){
     typeExplore('Explore');
     SelectedPlace = 0;
     SelectedImage = 0;
+    SelectedProvince = 0;
 }
 
 

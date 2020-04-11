@@ -185,9 +185,9 @@ from{
 }
 .places-ImageMapContainer{
     position: relative;
-    height: 320px;
+    height: 450px;
     margin-left: 20px;
-    width: 650px;
+    width: 850px;
     float: right;
     padding: 10px;
     padding-bottom: 10px;
@@ -245,7 +245,7 @@ from{
 
 .places-image{
     width: auto;
-    height: 300px;
+    height: 420px;
     position: absolute;
     pointer-events: none;
     opacity: 0;
@@ -289,7 +289,7 @@ from{
     position: absolute;
     color: white;
     background-color: rgb(37, 84, 185);
-    height: 300px;
+    height: 430px;
     box-shadow: 2px 2px 12px rgb(5, 19, 56);
     border-radius: 2px;
 }
@@ -299,21 +299,22 @@ from{
     float: left;
 }
 .today p{
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     line-height: 10px;
     text-align: center;
 }
 .today img{
     position: absolute;
-    width: 150px;
+    width: 250px;
     top: 0px;
     left: 0px;
+    transform: translate(-30px,30px);
 }
 .today-temp{
     font-family: sans-serif ;
     float: left;
-    font-size: 2.5rem;
+    font-size:3.5rem;
     font-weight: bolder;
     width: 100%;
     line-height: 20px;
@@ -321,16 +322,25 @@ from{
     text-align: right;
 }
 .today-temp p{
+    font-size: 30px;
     text-align: right;
 }
 .today-details{
-    padding-left: 20px;
+    padding-left: 30px;
     margin-top:1.8rem;
     width: 100%;
-    margin-bottom: 0.5rem;
+    margin-bottom: 2rem;
     float: left;
 }
-
+.today-details-div{
+    width: 100%;
+    font-size:25px;
+    float: left;
+    padding-left: 30px;
+    padding-right: 5px;
+    line-height: 25px;
+    padding-top: 50px!important;
+}
 .future{
     height: 100%;
     width: 50%;
@@ -342,12 +352,12 @@ from{
 .future-days{
     width: 40%;
     float: left;
-    height: 100px;
+    height: 180px;
     margin:5px;
-    margin-left: 10px;
+    margin-left: 30px;
     padding-bottom: 120px;
     position: relative;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     line-height: 20px;
     text-align: center;
@@ -407,23 +417,126 @@ from{
   }
 }
 /*Mobile View*/
+@media screen and (max-width:2000){
 
+}
 @media screen and (max-width:1400px){
     .map-container svg{
         width: 70%;
         transform:translateX(20vw);
     }
-}
-@media screen and (max-width:1100px){
-    .showProvinces-Container{
-        width: 95%!important;
-        transform: translateX(2.5vw);
-        height: 80vh;
+    .places-ImageMapContainer{
+        width:650px;
+        height: 320px;
     }
-    .places-Container{
-        max-height:70vh;
+    .places-imageContainer{
+        position:absolute;
+        width: auto;
+        height: auto;
+        opacity: 0;
+        pointer-events: none;
+        text-align: center;
     }
     
+    .places-image{
+        width: auto;
+        height: 300px;
+        position: absolute;
+        pointer-events: none;
+        opacity: 0;
+        transition: all 0.5s ease;
+        transform: translateX(0px);
+        box-shadow: 2px 2px 12px rgb(5, 19, 56);
+        border-radius: 2px;
+    }
+    .places-weather-container{
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        color: white;
+        background-color: rgb(37, 84, 185);
+        height: 300px;
+        box-shadow: 2px 2px 12px rgb(5, 19, 56);
+        border-radius: 2px;
+    }
+    .today{
+        height: 100%;
+        width: 50%;
+        float: left;
+    }
+    .today p{
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 10px;
+        text-align: center;
+    }
+    
+    .today-temp{
+        font-family: sans-serif ;
+        float: left;
+        font-size: 2.5rem;
+        font-weight: bolder;
+        width: 100%;
+        line-height: 20px;
+        padding-top: 0.6rem;
+        text-align: right;
+    }
+    .today-temp p{
+        text-align: right;
+    }
+    .today-details-div{
+        padding-left: 10px;
+        font-size:20px;
+        line-height: 20px!important;
+        padding-top: 10px!important;
+    }
+    .today img{
+        transform: translate(-10px,30px);
+        position: absolute;
+        width: 150px;
+        top: 0px;
+        left: 0px;
+    }
+    .today-details{
+        padding-left: 20px;
+        margin-top:1.8rem;
+        width: 100%;
+        margin-bottom: 0.5rem;
+        float: left;
+    }
+    .future{
+        height: 100%;
+        width: 50%;
+        float: left;
+        padding: 30px;
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+    .future-days{
+        width: 40%;
+        float: left;
+        height: 100px;
+        margin:5px;
+        margin-left: 10px;
+        padding-bottom: 120px;
+        position: relative;
+        font-size: 1.2rem;
+        font-weight: bold;
+        line-height: 20px;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.226);
+        box-shadow: 2px 2px 10px rgb(37, 84, 185);
+        border-radius: 3px;
+    }
+    .future-days p2{
+        font-size: 1rem;
+    }
+    .future-days img{
+        position: absolute;
+        top: 4vh;
+        left:10px;
+        width: 8vw;
+    }
 }
 @media screen and (max-width: 1000px) {
     .province-intro{
@@ -437,7 +550,7 @@ from{
         transform:translateX(25vw);
     }
 }
-@media screen and (max-width:800px){
+@media screen and (max-width:950px){
     .comboBox{
         width:100%
     }
@@ -452,21 +565,22 @@ from{
         width: 50%;
     }
     .today-temp{
-        font-size: 5vw;
-    }
-    .today-temp p{
         font-size: 3vw;
     }
+    .today-temp p{
+        font-size: 2vw;
+    }
     .today img{
-        width: 25vw;
+        width: 20vw;
         transform: translate(-10px,20px);
     }
     .today-details-div{
-        padding-top: 10px!important;
+        padding-top: 20vw!important;
         width: 100%;
-        font-size: 15px;
+        font-size: 12px;
         padding-left: 5vw;
-        line-height: 20px;
+        line-height: 12px!important;
+        padding-top: 20px!important;
     }
     .future{
         width: 50%;
@@ -480,7 +594,22 @@ from{
     }
     .future-days img{
         width: 65%;
-        transform: translate(1.5vw,10px);
+        transform: translate(1.5vw,0px);
+    }
+}
+@media screen and (max-width: 900px) {
+    .today-temp{
+        font-size: 4.5vw;
+    }
+    .today-temp p{
+        font-size: 2.5vw;
+    }
+    .today img{
+        width: 25vw;
+        transform: translate(-10px,15px);
+    }
+    .future-days img{
+        transform: translateX(1.5vw,20px)!important;
     }
 }
 @media screen and (max-width: 500px) {
@@ -519,7 +648,7 @@ from{
     }
     .today-temp{
         width: 60%;
-        font-size:8vw!important;
+        font-size:5vw!important;
         float: left;
     }
     .today-temp p{
@@ -532,11 +661,12 @@ from{
     }
     .today-details-div{
         width: 40%;
-        font-size:2.6vw;
+        font-size:2.3vw!important;
         float: left;
         padding-left: 15px;
         padding-right: 5px;
-        line-height: 16px;
+        line-height: 12px;
+        padding-top: 10px!important;
     }
     .future{
         width: 100%;
@@ -547,10 +677,13 @@ from{
         margin: 0.5vw;
         width: 22.4%;
         height: auto!important;
-        font-size: 2vw;
+        font-size: 1vw!important;
         padding-bottom: 20px;
         text-align: center!important;
         transform: translateX(10%);
+    }
+    .future-days p{
+        font-size: 10px;
     }
     .future-days p2{
         display: none;
